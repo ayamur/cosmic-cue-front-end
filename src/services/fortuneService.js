@@ -31,3 +31,16 @@ const index = async () => {
     console.log(error)
   }
 }
+
+const show = async (id) => {
+  try {
+    // GET http://localhost:3001/api/fortunes/:id
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (error) {
+
+  }
+}
+
