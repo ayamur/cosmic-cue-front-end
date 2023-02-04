@@ -61,3 +61,21 @@ const update = async (fortuneData) => {
   }
 }
 
+const deleteFortune = async (fortuneData) => {
+  try {
+    // DELETE http://localhost:3001/api/fortunes/:id
+    const res = await fetch(BASE_URL, {
+      method: 'DELETE'
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(fortuneData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { create, index, show, update, deleteFortune as delete }
