@@ -19,3 +19,15 @@ const create = async (fortuneData) => {
     console.log(error);
   }
 }
+
+const index = async () => {
+  // GET http://localhost:3001/api/fortunes
+  try {
+    const res = await fetch(BASE_URL, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
