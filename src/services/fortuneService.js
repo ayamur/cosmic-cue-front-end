@@ -44,3 +44,20 @@ const show = async (id) => {
   }
 }
 
+const update = async (fortuneData) => {
+  try {
+    // POST http://localhost:3001/api/fortunes/:id
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(fortuneData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
