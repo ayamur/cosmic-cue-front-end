@@ -65,7 +65,7 @@ const deleteFortune = async (fortuneData) => {
   try {
     // DELETE http://localhost:3001/api/fortunes/:id
     const res = await fetch(BASE_URL, {
-      method: 'DELETE'
+      method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
         'Content-Type': 'application/json'
