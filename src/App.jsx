@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
@@ -34,6 +34,17 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  useEffect(() => {
+    const fetchAllFortunes = async () => {
+      const data = await fortuneService.index()
+      console.log("FORTUNE DATA:", data);
+      setFortunes(data)
+    }
+    if (user) fetchAllFortunes()
+  }, [user])
+
+  const [fortunes, setFortunes] = useState([])
 
   return (
     <>
