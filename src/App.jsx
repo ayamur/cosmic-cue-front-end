@@ -6,6 +6,7 @@ import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
+import FortuneList from './pages/FortuneList/FortuneList'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
@@ -15,6 +16,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as fortuneService from './services/fortuneService'
 
 // styles
 import './App.css'
