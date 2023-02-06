@@ -1,11 +1,12 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 // page components
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
+import FortuneList from './pages/FortuneList/FortuneList'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
@@ -37,17 +38,17 @@ const App = () => {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path='/' element={<Landing user={user} />} />
         <Route
-          path="/signup"
+          path='/signup'
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/login"
+          path='/login'
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
+          path='/profiles'
           element={
             <ProtectedRoute user={user}>
               <Profiles />
@@ -55,10 +56,18 @@ const App = () => {
           }
         />
         <Route
-          path="/change-password"
+          path='/change-password'
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/fortunes'
+          element={
+            <ProtectedRoute user={user}>
+              <FortuneList fortunes={fortunes} />
             </ProtectedRoute>
           }
         />
