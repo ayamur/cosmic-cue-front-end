@@ -16,7 +16,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
-import * as fortuneService from './services/fortuneService'
 
 // styles
 import './App.css'
@@ -35,32 +34,21 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  useEffect(() => {
-    const fetchAllFortunes = async () => {
-      const data = await fortuneService.index()
-      console.log("FORTUNE DATA:", data);
-      setFortunes(data)
-    }
-    if (user) fetchAllFortunes()
-  }, [user])
-
-  const [fortunes, setFortunes] = useState([])
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path='/' element={<Landing user={user} />} />
         <Route
-          path="/signup"
+          path='/signup'
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/login"
+          path='/login'
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
+          path='/profiles'
           element={
             <ProtectedRoute user={user}>
               <Profiles />
@@ -68,7 +56,7 @@ const App = () => {
           }
         />
         <Route
-          path="/change-password"
+          path='/change-password'
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
@@ -76,7 +64,7 @@ const App = () => {
           }
         />
         <Route
-          path="/fortunes"
+          path='/fortunes'
           element={
             <ProtectedRoute user={user}>
               <FortuneList fortunes={fortunes} />

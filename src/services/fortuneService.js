@@ -1,4 +1,4 @@
-import * as tokenService from "./tokenService"
+import * as tokenService from './tokenService'
 
 // http://localhost:3001/api/fortunes
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/fortunes`
