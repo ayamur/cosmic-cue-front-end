@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
-import * as fortuneService from './services/fortuneService'
+
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
@@ -12,16 +12,6 @@ const Profiles = () => {
     }
     fetchProfiles()
   }, [])
-
-  useEffect(() => {
-    const fetchAllFortunes = async () => {
-      const data = await fortuneService.index()
-      setFortunes(data)
-    }
-    if (user) fetchAllFortunes()
-  }, [user])
-
-  const [fortunes, setFortunes] = useState([])
 
   return (
     <>

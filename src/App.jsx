@@ -6,9 +6,9 @@ import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import FortuneList from './pages/FortuneList/FortuneList'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import FortuneList from './pages/FortuneList/FortuneList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -16,6 +16,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as fortuneService from './services/fortuneService'
 
 // styles
 import './App.css'
@@ -23,6 +24,7 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [fortunes, setFortunes] = useState({})
 
   const handleLogout = () => {
     authService.logout()
@@ -33,6 +35,15 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  useEffect(() => {
+    const fetchAllFortunes = async () => {
+      const data = await fortuneService.index()
+      setFortunes(data)
+    }
+    fetchAllFortunes()
+  }, [user])
+
 
   return (
     <>
