@@ -35,6 +35,14 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  useEffect(() => {
+    const fetchAllBlogs = async () => {
+      const data = await blogService.index()
+      setBlogs(data)
+    }
+    fetchAllBlogs()
+  }, [user])
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -68,7 +76,7 @@ const App = () => {
           path="/blogs"
           element={
             <ProtectedRoute user={user}>
-              <BlogList />
+              <BlogList blogs={blogs}/>
             </ProtectedRoute>
           }
         />
