@@ -76,7 +76,7 @@ const App = () => {
           path="/blogs"
           element={
             <ProtectedRoute user={user}>
-              <BlogList blogs={blogs}/>
+              <BlogList blogs={blogs} />
             </ProtectedRoute>
           }
         />
