@@ -1,4 +1,5 @@
-// import styles from './BlogList.modules.css'
+import styles from './BlogList.modules.css'
+
 const BlogList = (props) => {
   return (
     <>
