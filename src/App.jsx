@@ -72,13 +72,11 @@ const App = () => {
           path='/profiles/:id'
           element={
             <ProtectedRoute user={user}>
-              <MyProfile />
-              <FortuneList user={user}fortunes={fortunes}/>
+              <MyProfile fortunes={fortunes} user={user}/>
+              {/* <FortuneList user={user} fortunes={fortunes}/> */}
             </ProtectedRoute>
           }
         />
-
-
 
         <Route
           path='/change-password'
@@ -89,14 +87,6 @@ const App = () => {
           }
         />
 
-        {/* <Route
-          path='/fortunes'
-          element={
-            <ProtectedRoute user={user}>
-              <FortuneList fortunes={fortunes} />
-            </ProtectedRoute>
-          }
-        /> */}
       </Routes>
     </>
   )

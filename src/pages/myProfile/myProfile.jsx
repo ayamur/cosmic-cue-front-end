@@ -9,7 +9,6 @@ const MyProfile = (props) => {
   const [myProfile, setMyProfile] = useState({})
   let { id } = useParams()
 
-
   useEffect(() => {
     const fetchMyProfile = async () => {
       const profileData = await getMyProfileInfo(id)
@@ -18,14 +17,12 @@ const MyProfile = (props) => {
     fetchMyProfile()
   }, [id])
   
-
-
   return (
     <>
-      <h4>My profile</h4>
+      <h4>Welcome to your profile</h4>
       <h4>{myProfile.name}</h4>
 
-      <h4> < FortuneList id={id}/>  </h4> 
+      <h4> < FortuneList id={id} profile={myProfile} fortunes={props.fortunes} user={props.user}/>  </h4> 
       
   </>
   )

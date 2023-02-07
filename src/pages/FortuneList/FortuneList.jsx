@@ -1,15 +1,22 @@
 import styles from './FortuneList.module.css'
+import { useEffect , useState } from 'react'
 
-const FortuneList = ({ fortunes, user, id }) => {
+const FortuneList = ({ fortunes, user, profile }) => {
   console.log(fortunes, 'fortunes')
-  // if (user === id)
+  const [myFortunes, setMyFortunes] = useState([])
+  
+  useEffect (() => {
+    setMyFortunes(fortunes.filter(fortune => fortune.owner._id === user.profile))
+
+  }, [fortunes])
 
     return (
       <main className={styles.container}>
         <>
-        {fortunes ?
+        {myFortunes ?
           <>
-            {fortunes.map((fortune) => {
+            {myFortunes.map((fortune) => {
+              
               return (
                 <>
                   <div key={fortune._id}>
@@ -27,7 +34,7 @@ const FortuneList = ({ fortunes, user, id }) => {
           </>
         }
         </>
-        Fortune List
+        Thank you for viewing your "Fortune List"
       </main>
     )
 }
