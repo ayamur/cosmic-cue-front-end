@@ -17,6 +17,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as blogService from './services/blogService'
+import* as signService from './services/signService'
 
 // styles
 import './App.css'
