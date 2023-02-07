@@ -25,7 +25,7 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  const [fortunes, setFortunes] = useState({})
+  const [fortunes, setFortunes] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -41,6 +41,7 @@ const App = () => {
     const fetchAllFortunes = async () => {
       const data = await fortuneService.index()
       setFortunes(data)
+    
     }
     fetchAllFortunes()
   }, [user])
@@ -72,6 +73,7 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <MyProfile />
+              <FortuneList user={user}fortunes={fortunes}/>
             </ProtectedRoute>
           }
         />
@@ -86,14 +88,15 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route
+
+        {/* <Route
           path='/fortunes'
           element={
             <ProtectedRoute user={user}>
               <FortuneList fortunes={fortunes} />
             </ProtectedRoute>
           }
-        />
+        /> */}
       </Routes>
     </>
   )
