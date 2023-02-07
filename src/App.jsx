@@ -44,6 +44,14 @@ const App = () => {
     fetchAllBlogs()
   }, [user])
 
+  useEffect(() => {
+    const fetchSigns = async () => {
+      const data = await signService.index()
+      console.log('Server Response:', data)
+    }
+    fetchSigns()
+  }, [])
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
