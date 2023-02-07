@@ -11,24 +11,17 @@ const FortuneDetails = (props) => {
   useEffect(() => {
     const fetchFortune = async () => {
       const data = await fortuneService.show(id)
-      
+      console.log('data:', data)
       setFortune(data)
-      
-      console.log('props', props)
-      console.log('fortune id:', id)
-      console.log('data2:', data)
     }
     fetchFortune()
   }, [id])
-  
-  console.log(fortune, 'Fortune state')
-
-  //this is the fortune id
-  console.log(id)
 
   return (
     <main>
-      Details
+      <h4>Fortune category: {fortune?.category.toUpperCase()}</h4>
+      <h4>Fortune message: {fortune?.message}</h4>
+      <h4>Lucky number: {fortune?.luckyNumber}</h4>
     </main>
   )
 }

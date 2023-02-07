@@ -38,6 +38,12 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  // const handleAddFortune = async (fortuneData) => {
+  //   const newFortune = await fortuneService.create(fortuneData)
+  //   setFortunes([newFortune, ...fortunes])
+  //   navigate('/fortunes')
+  // }
+
   useEffect(() => {
     const fetchAllFortunes = async () => {
       const data = await fortuneService.index()

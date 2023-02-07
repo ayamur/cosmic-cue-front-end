@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import FortuneDetails from '../FortuneDetails/FortuneDetails'
 import { Link } from 'react-router-dom'
 
-const FortuneList = ({ fortunes, user, profile }) => {
+const FortuneList = ({ fortunes, user }) => {
   const [myFortunes, setMyFortunes] = useState([])
 
   useEffect(() => {
