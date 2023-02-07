@@ -19,7 +19,7 @@ const NewSign = (props) => {
   return ( 
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title-input">Title</label>
+        <label htmlFor="noun-input">Noun</label>
         <input
           required
           type="text"
@@ -29,7 +29,7 @@ const NewSign = (props) => {
           placeholder="Noun"
           onChange={handleChange}
         />
-        <label htmlFor="text-input">Text</label>
+        <label htmlFor="adjective-input">Adjective</label>
 				<textarea
           required
           type="text"
