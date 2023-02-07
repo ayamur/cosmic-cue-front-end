@@ -47,10 +47,12 @@ const App = () => {
   useEffect(() => {
     const fetchSigns = async () => {
       const data = await signService.index()
-      console.log('Server Response:', data)
+      setSigns(data)
     }
     fetchSigns()
   }, [])
+
+  const [signs, setSigns] = useState([])
 
   return (
     <>
