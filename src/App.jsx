@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import FortuneList from './pages/FortuneList/FortuneList'
 import MyProfile from './pages/myProfile/myProfile'
+import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -41,7 +42,7 @@ const App = () => {
     const fetchAllFortunes = async () => {
       const data = await fortuneService.index()
       setFortunes(data)
-    
+
     }
     fetchAllFortunes()
   }, [user])
@@ -68,12 +69,20 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-            <Route
+        <Route
           path='/profiles/:id'
           element={
             <ProtectedRoute user={user}>
-              <MyProfile fortunes={fortunes} user={user}/>
-              {/* <FortuneList user={user} fortunes={fortunes}/> */}
+              <MyProfile fortunes={fortunes} user={user} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path='/fortunes/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <FortuneDetails fortunes={fortunes} user={user} />
             </ProtectedRoute>
           }
         />

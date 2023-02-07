@@ -10,6 +10,9 @@ const MyProfile = (props) => {
   let { id } = useParams()
 
   useEffect(() => {
+
+    // setMyProfiles(profiles.filter(profile => profile.owner._id === user.profile))
+
     const fetchMyProfile = async () => {
       const profileData = await getMyProfileInfo(id)
       setMyProfile(profileData)
