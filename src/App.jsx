@@ -8,8 +8,11 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import FortuneList from './pages/FortuneList/FortuneList'
+// import FortuneList from './pages/FortuneList/FortuneList'
 import MyProfile from './pages/myProfile/myProfile'
+import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
+import NewFortune from './pages/NewFortune/NewFortune'
+import RandomFortune from './pages/GetFortune/RandomFunction'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -37,11 +40,17 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  const handleAddFortune = async (fortuneData) => {
+    const newFortune = await fortuneService.create(fortuneData)
+    setFortunes([newFortune, ...fortunes])
+    navigate('/profiles/:id')
+  }
+
   useEffect(() => {
     const fetchAllFortunes = async () => {
       const data = await fortuneService.index()
       setFortunes(data)
-    
+
     }
     fetchAllFortunes()
   }, [user])
@@ -68,15 +77,37 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-            <Route
+        <Route
           path='/profiles/:id'
           element={
             <ProtectedRoute user={user}>
-              <MyProfile fortunes={fortunes} user={user}/>
-              {/* <FortuneList user={user} fortunes={fortunes}/> */}
+              <MyProfile fortunes={fortunes} user={user} />
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path='/fortunes/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <FortuneDetails fortunes={fortunes} user={user} />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path='/fortunes/new' element={
+            <ProtectedRoute user={user}>
+              <NewFortune handleAddFortune={handleAddFortune}/>
+            </ProtectedRoute>  
+          }
+          />
+
+          <Route  element={
+            <RandomFortune  fortunes={fortunes}/>
+          }
+          path='/fortunes'>
+          </Route>
 
         <Route
           path='/change-password'
