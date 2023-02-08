@@ -18,5 +18,16 @@ const create = async (signData) => {
   }
 }
 
+const show = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}` , {
+      headers: { 'Authorization': `${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-export { create, }
+
+export { create, show }
