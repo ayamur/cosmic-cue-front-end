@@ -21,7 +21,7 @@ const BlogDetails = (props) => {
     fetchBlog()
   }, [id])
 
-  if (!blog) return <Loading />
+  // if (!blog) return <Loading />
 
   return (
     <main className={styles.container}>
