@@ -14,10 +14,7 @@ const RandomFortune = (props) => {
   getRandomInt(props.fortunes.length)
   }, [props.fortunes])
   
-  // useEffect(() => {
-  //   props.fortunes.length ?
-  // getRandomInt(props.fortunes.length):console.log('hello world')
-  // }, [props.fortunes])
+
 
 
   return (
@@ -26,7 +23,6 @@ const RandomFortune = (props) => {
     {/* <h1>{props.fortune[randomNum].message}</h1> */}
     <h1>{randomFortune?.message}</h1>
     <h1>{randomFortune?.luckyNumber}</h1>
-    
     </>
   )
 
