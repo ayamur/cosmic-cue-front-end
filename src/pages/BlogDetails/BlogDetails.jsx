@@ -6,7 +6,6 @@ import styles from './BlogDetails.module.css'
 import * as blogService from '../../services/blogService'
 
 // Components
-import Loading from "../Loading/Loading"
 import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 
 const BlogDetails = (props) => {
@@ -20,8 +19,6 @@ const BlogDetails = (props) => {
     }
     fetchBlog()
   }, [id])
-
-  if (!blog) return <Loading />
 
   return (
     <main className={styles.container}>
