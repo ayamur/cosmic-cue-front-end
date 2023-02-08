@@ -75,6 +75,12 @@ const App = () => {
     navigate('/blogs')
   }
 
+  const handleDeleteBlog = async (id) => {
+    const deletedBlog = await blogService.deleteBlog(id)
+    setBlogs(blogs.filter(b => b._id !== deletedBlog._id))
+    navigate('/blogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
