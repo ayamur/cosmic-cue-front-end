@@ -14,6 +14,7 @@ import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
 import BlogList from './pages/BlogList/BlogList'
+import BlogDetails from './pages/BlogDetails/BlogDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -135,6 +136,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <BlogList blogs={blogs} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/blogs/:id"
+          element={
+            <ProtectedRoute user={user}>
+              <BlogDetails user={user} />
             </ProtectedRoute>
           }
         />
