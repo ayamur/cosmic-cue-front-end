@@ -1,4 +1,4 @@
-import { useState, useEffect, Profiler } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getMyProfileInfo } from '../../services/profileService'
 import FortuneList from '../FortuneList/FortuneList'
@@ -10,10 +10,11 @@ const MyProfile = (props) => {
   const [myProfile, setMyProfile] = useState({})
   let { id } = useParams()
 
+  //if you are the user with this profile, filter you out, then..
+
+  // setMyProfiles(props.profiles.filter(profile => profile.owner._id === props.user.profile))
+
   useEffect(() => {
-
-    // setMyProfiles(profiles.filter(profile => profile.owner._id === user.profile))
-
     const fetchMyProfile = async () => {
       const profileData = await getMyProfileInfo(id)
       setMyProfile(profileData)
@@ -30,7 +31,6 @@ const MyProfile = (props) => {
 
       <h4> < FortuneList id={id} profile={myProfile} fortunes={props.fortunes} user={props.user} key={myProfile.id}/>  </h4> 
 
-   
       
   </>
   )
