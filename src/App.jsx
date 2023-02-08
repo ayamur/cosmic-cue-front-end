@@ -111,16 +111,16 @@ const App = () => {
         <Route
           path='/fortunes/new' element={
             <ProtectedRoute user={user}>
-              <NewFortune handleAddFortune={handleAddFortune}/>
-            </ProtectedRoute>  
+              <NewFortune handleAddFortune={handleAddFortune} />
+            </ProtectedRoute>
           }
-          />
+        />
 
-          <Route  element={
-            <RandomFortune  fortunes={fortunes}/>
-          }
+        <Route element={
+          <RandomFortune fortunes={fortunes} />
+        }
           path='/fortunes'>
-          </Route>
+        </Route>
 
         <Route
           path='/change-password'
@@ -130,11 +130,11 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-                <Route
+        <Route
           path="/blogs"
           element={
             <ProtectedRoute user={user}>
-              <BlogList blogs={blogs}/>
+              <BlogList blogs={blogs} />
             </ProtectedRoute>
           }
         />

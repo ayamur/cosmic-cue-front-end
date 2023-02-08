@@ -4,9 +4,9 @@ const BlogList = (props) => {
   return (
     <main className={styles.container}>
       {props.blogs.map((blog) => (
-        <p key={blog._id}>
+        <div key={blog._id}>
           {blog.title}
-        </p>
+        </div>
       ))}
     </main>
   )
