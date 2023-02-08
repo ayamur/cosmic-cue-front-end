@@ -42,7 +42,7 @@ const App = () => {
     const fetchAllFortunes = async () => {
       const data = await fortuneService.index()
       setFortunes(data)
-    
+
     }
     fetchAllFortunes()
   }, [user])
@@ -69,11 +69,11 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-            <Route
+        <Route
           path='/profiles/:id'
           element={
             <ProtectedRoute user={user}>
-              <MyProfile fortunes={fortunes} user={user}/>
+              <MyProfile fortunes={fortunes} user={user} />
               {/* <FortuneList user={user} fortunes={fortunes}/> */}
             </ProtectedRoute>
           }
@@ -87,7 +87,14 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-
+        <Route
+          path="/blogs"
+          element={
+            <ProtectedRoute user={user}>
+              <BlogList />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   )
