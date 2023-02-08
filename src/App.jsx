@@ -8,7 +8,6 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import BlogList from './pages/BlogList/BlogList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -16,8 +15,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
-import * as blogService from './services/blogService'
-import * as signService from './services/signService'
 
 // styles
 import './App.css'
@@ -25,6 +22,7 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [fortunes, setFortunes] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -36,58 +34,42 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  useEffect(() => {
-    const fetchAllBlogs = async () => {
-      const data = await blogService.index()
-      setBlogs(data)
-    }
-    fetchAllBlogs()
-  }, [user])
-
-  useEffect(() => {
-    const fetchSigns = async () => {
-      const data = await signService.index()
-      setSigns(data)
-    }
-    fetchSigns()
-  }, [])
-
-  const [signs, setSigns] = useState([])
-
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path='/' element={<Landing user={user} />} />
         <Route
-          path="/signup"
+          path='/signup'
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/login"
+          path='/login'
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
+          path='/profiles'
           element={
             <ProtectedRoute user={user}>
               <Profiles />
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/change-password"
+            <Route
+          path='/profiles/:id'
           element={
             <ProtectedRoute user={user}>
-              <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+              <MyProfile fortunes={fortunes} user={user}/>
+              {/* <FortuneList user={user} fortunes={fortunes}/> */}
             </ProtectedRoute>
           }
         />
+
         <Route
-          path="/blogs"
+          path='/change-password'
           element={
             <ProtectedRoute user={user}>
-              <BlogList blogs={blogs} />
+              <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
             </ProtectedRoute>
           }
         />
