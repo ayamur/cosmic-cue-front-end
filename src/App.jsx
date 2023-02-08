@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import MyProfile from './pages/myProfile/myProfile'
 import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 import NewFortune from './pages/NewFortune/NewFortune'
+import RandomFortune from './pages/GetFortune/RandomFunction'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -102,7 +103,9 @@ const App = () => {
           }
           />
 
-          <Route 
+          <Route  element={
+            <RandomFortune  fortunes={fortunes}/>
+          }
           path='/fortunes'>
           </Route>
 
