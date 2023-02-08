@@ -6,7 +6,7 @@ const WriterInfo = ({ content }) => {
   const photo = content.writer.photo ? content.writer.photo : ProfileIcon
   return (
     <div className={styles.container}>
-      <img src={photo} alt="The user's avatar" />
+      <img src={photo} alt='The user's avatar' />
       <section>
         <h4>{content.writer.name}</h4>
         <DateCard createdAt={content.createdAt} />
