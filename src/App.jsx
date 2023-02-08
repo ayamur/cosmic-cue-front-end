@@ -43,7 +43,7 @@ const App = () => {
   const handleAddFortune = async (fortuneData) => {
     const newFortune = await fortuneService.create(fortuneData)
     setFortunes([newFortune, ...fortunes])
-    navigate('/profiles/:id')
+    navigate(`/profiles/${user.profile}`)
   }
 
   useEffect(() => {
