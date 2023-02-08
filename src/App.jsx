@@ -164,6 +164,12 @@ const App = () => {
           <ProtectedRoute user={user}>
             <NewBlog handleAddBlog={handleAddBlog} />
           </ProtectedRoute>
+        }
+        />
+        <Route path="/blogs/:id" element={
+          <ProtectedRoute user={user}>
+            <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog} />
+          </ProtectedRoute>
         } />
       </Routes>
     </>
