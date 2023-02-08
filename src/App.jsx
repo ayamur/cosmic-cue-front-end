@@ -15,6 +15,7 @@ import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
 import BlogList from './pages/BlogList/BlogList'
 import BlogDetails from './pages/BlogDetails/BlogDetails'
+import NewBlog from './pages/NewBlog/NewBlog'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -153,6 +154,11 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path="/blogs/new" element={
+          <ProtectedRoute user={user}>
+            <NewBlog handleAddBlog={handleAddBlog} />
+          </ProtectedRoute>
+        } />
       </Routes>
     </>
   )

@@ -53,6 +53,7 @@ select:focus,
 textarea:focus {
   outline: none;
   border: 1px solid var(--primary);
+}
 
   .container {
     height: 100%;
