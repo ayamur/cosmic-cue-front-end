@@ -13,7 +13,7 @@ const NewBlog = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-		// Update this line shortly...
+    props.handleAddBlog(form)
   }
 
   return (
@@ -30,7 +30,7 @@ const NewBlog = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="text-input">Mantra</label>
-				<textarea
+        <textarea
           required
           type="text"
           name="text"
