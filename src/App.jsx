@@ -68,6 +68,12 @@ const App = () => {
 
   const [blogs, setBlogs] = useState([])
 
+  const handleAddBlog = async (blogData) => {
+    const newBlog = await blogService.create(blogData)
+    setBlogs([newBlog, ...blogs])
+    navigate('/blogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
