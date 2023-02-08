@@ -8,9 +8,10 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import FortuneList from './pages/FortuneList/FortuneList'
+// import FortuneList from './pages/FortuneList/FortuneList'
 import MyProfile from './pages/myProfile/myProfile'
 import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
+import NewFortune from './pages/NewFortune/NewFortune'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -38,11 +39,11 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  // const handleAddFortune = async (fortuneData) => {
-  //   const newFortune = await fortuneService.create(fortuneData)
-  //   setFortunes([newFortune, ...fortunes])
-  //   navigate('/fortunes')
-  // }
+  const handleAddFortune = async (fortuneData) => {
+    const newFortune = await fortuneService.create(fortuneData)
+    setFortunes([newFortune, ...fortunes])
+    navigate('/profiles/:id')
+  }
 
   useEffect(() => {
     const fetchAllFortunes = async () => {
@@ -92,6 +93,18 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path='/fortunes/new' element={
+            <ProtectedRoute user={user}>
+              <NewFortune handleAddFortune={handleAddFortune}/>
+            </ProtectedRoute>  
+          }
+          />
+
+          <Route 
+          path='/fortunes'>
+          </Route>
 
         <Route
           path='/change-password'
