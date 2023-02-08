@@ -19,6 +19,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as fortuneService from './services/fortuneService'
+import * as blogService from './services/blogService'
 
 // styles
 import './App.css'
@@ -47,6 +48,15 @@ const App = () => {
     fetchAllFortunes()
   }, [user])
 
+  useEffect(() => {
+    const fetchAllBlogs = async () => {
+      const data = await blogService.index()
+      setBlogs(data)
+    }
+    fetchAllBlogs()
+  }, [user])
+
+  const [blogs, setBlogs] = useState([])
 
   return (
     <>
@@ -91,7 +101,7 @@ const App = () => {
           path="/blogs"
           element={
             <ProtectedRoute user={user}>
-              <BlogList />
+              <BlogList blogs={blogs} />
             </ProtectedRoute>
           }
         />
