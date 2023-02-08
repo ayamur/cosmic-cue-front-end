@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import FortuneList from './pages/FortuneList/FortuneList'
 import MyProfile from './pages/myProfile/myProfile'
+import NewSign from './pages/NewSign/NewSign'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -18,6 +19,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as fortuneService from './services/fortuneService'
+import * as signService from './services/signService'
 
 // styles
 import './App.css'
@@ -26,6 +28,8 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [fortunes, setFortunes] = useState([])
+  const [signs, setSigns] = useState([])
+
 
   const handleLogout = () => {
     authService.logout()
@@ -46,6 +50,11 @@ const App = () => {
     fetchAllFortunes()
   }, [user])
 
+  const handleAddSign = async (signData) => {
+    const newSign = await signService.create(signData)
+    setSigns([newSign, ...signs])
+    navigate('/signs')
+  }
 
   return (
     <>
@@ -85,6 +94,13 @@ const App = () => {
               <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
             </ProtectedRoute>
           }
+        />
+        <Route 
+          path="/signs/new"  element={ 
+          <ProtectedRoute user={user}>
+            <NewSign handleAddSign={handleAddSign} />
+          </ProtectedRoute> 
+        } 
         />
 
       </Routes>
