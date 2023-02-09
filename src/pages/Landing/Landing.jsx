@@ -3,7 +3,8 @@ import styles from './Landing.module.css'
 const Landing = ({ user }) => {
   return (
     <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+      <img src="/Logo.png" alt="" />
+      <h1>Welcome to Cosmic Cue, {user ? user.name : 'friend'}</h1>
     </main>
   )
 }
