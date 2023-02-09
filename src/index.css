@@ -1,14 +1,36 @@
-  @import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: 'Ubuntu', sans-serif;
-  }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+  'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Ubuntu', sans-serif;
+  width: 100%;
+  /* background: url('./assets/icons/CosmicCueBackground.png') */
+  /* background: url('./assets/icons/GreenStars.jpg') */
+}
+
+#root{
+  height: 100vh;
+}
+
+main {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+main div {
+background-color: white;
+
+}
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -77,40 +99,65 @@
     justify-content: center;
   }
 
-  main {
-    margin: auto;
-    width: 100%;
+  .profiles{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
   .profilesOne {
     border: black solid .05px;
     border-radius: 10px;
     width: 45%;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color:#FAF9F6;
   }
   .profilesTwo {
     border: black solid .05px;
     border-radius: 10px;
     width: 45%;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:#FAF9F6;
   }
 
-  .profileNav {
+  /* img{
+    height: auto;
+    width: 80%;
+    object-fit: cover;
+  } */
+
+  .myProfile {
     padding: 20px;
     font-family: 'Ubuntu', sans-serif;
+    background-color: #b4a0e5;
+    display: flex;
+    justify-content: space-between;
   }
 
-  .fortuneLinks {
+
+
+  .profileImages{
+    background-color: blue;
+
+  }
+
+  .fortuneLinks{
     display: flex;
     flex-direction: column;
-    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .fortuneLinks a{
+    color:#1E1014;
+  }
+
+  .fortuneLinks a:hover{
+    color:#69587d
   }
 
   .fortuneList {
@@ -133,11 +180,13 @@
 
   .fortuneListOne {
     width: 50%;
+    height: 50%;
     margin: auto;
   }
 
   .fortuneListTwo {
     width: 50%;
+    height: 50%;
     margin: auto;
     display: flex;
     justify-content: center;
