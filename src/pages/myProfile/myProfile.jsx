@@ -28,6 +28,7 @@ const MyProfile = (props) => {
           <h4>{myProfile.name}</h4>
     
           <Link to="/fortunes/new">Create a New Fortune</Link>
+          <Link to='/signs/new'>Create a Sign</Link>
     
           < FortuneList id={id} profile={myProfile} fortunes={props.fortunes} user={props.user}/>     
       </>
