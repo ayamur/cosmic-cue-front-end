@@ -38,6 +38,7 @@ const App = () => {
   const navigate = useNavigate()
   const [fortunes, setFortunes] = useState([])
   const [signs, setSigns] = useState([])
+  
 
 
   const handleLogout = () => {
