@@ -41,7 +41,7 @@ const Profiles = (user) => {
 
         </section>
         <section className="profilesTwo">
-          <img src="/honeymoon.png" alt="" />
+          <img src="/honeymoon.png" alt="cresent moon icon" />
         </section>
       </main>
     </>

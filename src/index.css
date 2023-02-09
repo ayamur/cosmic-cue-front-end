@@ -1,7 +1,5 @@
   @import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
-
-
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -19,6 +17,11 @@
 
   h1 {
     font-size: 28px;
+    font-family: 'sriracha';
+  }
+
+  h2{
+    font-size:  26px;
   }
 
   h4 {
@@ -36,7 +39,7 @@
   }
 
   a:hover {
-    color: #b4a0e5;
+    color: #69587d;
     /* background-color: #1e1014; */
     font-weight: 400;
     text-decoration: none;
@@ -61,11 +64,24 @@
     font-weight: bold;
   }
 
+  button:hover {
+    background-color: #b4a0e5;;
+    color: #1E1014;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .editButton {
+    background-color: #b4a0e5;
+    display: flex;
+    justify-content: center;
+  }
+
   main {
     margin: auto;
     width: 100%;
     display: flex;
-    justify-content: center;  
+    justify-content: center;
   }
 
   .profilesOne {
@@ -85,4 +101,78 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+
+  .profileNav {
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .fortuneLinks {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  .fortuneListContainer {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fortuneListContainer h1 {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'sriracha';
+  }
+
+  .fortuneListOne {
+    display: flex;
+  }
+
+  .fortuneListTwo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    padding: 16px 32px;
+    background-color: grey;
+    border-radius: 15px;
+    border: .05px solid black;
+    display: flex;
+    flex-direction: column;
+    background-color: #eae6f3;
+  }
+
+  form label {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    padding: 8px;
+  }
+
+  form input {
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+  form button {
+    padding-top: 16px;
+    margin-top: 16px;
+  }
+
+  .randomSign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 75%;
   }

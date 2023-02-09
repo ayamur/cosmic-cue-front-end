@@ -4,8 +4,6 @@ import { getMyProfileInfo } from '../../services/profileService'
 import FortuneList from '../FortuneList/FortuneList'
 import { Link } from 'react-router-dom'
 
-
-
 const MyProfile = (props) => {
   const [myProfile, setMyProfile] = useState({})
   let { id } = useParams()
@@ -24,18 +22,21 @@ const MyProfile = (props) => {
       if (!myProfile) return "loading"
       return (
         <>
+        <div className="profileNav">
           <h4>Welcome to your profile</h4>
           <h4>{myProfile.name}</h4>
-    
+        <div className="fortuneLinks">
           <Link to="/fortunes/new">Create a New Fortune</Link>
           <Link to='/signs/new'>Create a Sign</Link>
+        </div>
+        </div>
     
           < FortuneList id={id} profile={myProfile} fortunes={props.fortunes} user={props.user}/>     
       </>
       );
     } else {
 
-      return <h4>this is not your profile</h4>
+      return <h4>This is not your profile.</h4>
 
     }
   }
