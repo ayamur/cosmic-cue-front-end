@@ -56,7 +56,7 @@ const App = () => {
   const handleAddFortune = async (fortuneData) => {
     const newFortune = await fortuneService.create(fortuneData)
     setFortunes([newFortune, ...fortunes])
-    navigate('/profiles/:id')
+    navigate(`/profiles`)
   }
 
   useEffect(() => {
@@ -75,7 +75,7 @@ const App = () => {
     })
     setBlogs(updatedFortuneData)
     // setFortunes(fortunes.map((b) => fortuneData._id === b._id ? updatedFortune : b))
-    navigate('/profiles')
+    navigate(`/profiles`)
   }
 
   const handleAddSign = async (signData) => {
