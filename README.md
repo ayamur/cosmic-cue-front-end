@@ -60,7 +60,7 @@ CosmicCue is an app designed to bring positivity and inspiration into your life.
 
 - [ ]  Save sign to profile
 
-- [ ]  Ability to customize prpfile page (add bio etc)
+- [ ]  Ability to customize profile page (add bio etc)
 
 
 
