@@ -67,7 +67,7 @@ const App = () => {
 
     }
     fetchAllFortunes()
-  }, [user])
+  }, [])
 
   const handleUpdateFortune = async (fortuneData) => {
     const updateFortune = await fortuneService.update(fortuneData)
@@ -159,8 +159,6 @@ const handleDeleteFortune = async (id) => {
           element={
             <ProtectedRoute user={user}>
               <FortuneDetails fortunes={fortunes} user={user} handleDeleteFortune={handleDeleteFortune}/>
-              {/* <EditFortune handleUpdateFortune={handleUpdateFortune} /> */}
-              {/* <FortuneDetails user={user} handleDeleteFortune={handleDeleteFortune} /> */}
             </ProtectedRoute>
           }
         />
@@ -177,6 +175,7 @@ const handleDeleteFortune = async (id) => {
         }
           path='/fortunes'>
         </Route>
+
         <Route
           path='/fortunes/:id/edit' element={
             <ProtectedRoute user={user}>
@@ -184,13 +183,6 @@ const handleDeleteFortune = async (id) => {
             </ProtectedRoute>
           }
         />
-          {/* <Route
-          path='/fortunes/:id' element={
-            <ProtectedRoute user={user}>
-              <FortuneDetails user={user} handleDeleteFortune={handleDeleteFortune} />
-            </ProtectedRoute>
-          }
-        /> */}
 
         <Route
           path='/change-password'
@@ -213,7 +205,7 @@ const handleDeleteFortune = async (id) => {
           path='/blogs/:id'
           element={
             <ProtectedRoute user={user}>
-              <BlogDetails user={user} blogs={blogs} handleDeleteBlog={handleDeleteBlog}/>
+              <BlogDetails user={user}  blogs={blogs} handleDeleteBlog={handleDeleteBlog}/>
             </ProtectedRoute>
           }
         />
