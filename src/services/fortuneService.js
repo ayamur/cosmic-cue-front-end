@@ -40,4 +40,20 @@ const show = async (id) => {
   }
 }
 
-export { create, index, show }
+const update = async (fortuneData) => {
+  try {
+    const res = await fetch (`${BASE_URL}/${fortuneData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(fortuneData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { create, index, show , update , }
