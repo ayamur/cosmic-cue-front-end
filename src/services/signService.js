@@ -18,10 +18,10 @@ const create = async (signData) => {
   }
 }
 
-const show = async (id) => {
+const index = async () => {
   try {
-    const res = await fetch(`${BASE_URL}/${id}` , {
-      headers: { 'Authorization': `${tokenService.getToken()}`}
+    const res = await fetch(BASE_URL, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
     })
     return res.json()
   } catch (error) {
@@ -30,4 +30,4 @@ const show = async (id) => {
 }
 
 
-export { create, show }
+export { create, index }
