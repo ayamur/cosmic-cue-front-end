@@ -17,7 +17,8 @@ const Profiles = (user) => {
 
   return (
     <>
-      <h1>Hello. This is a list of all the profiles.</h1>
+      <h1>Welcome to Cosmic Cue</h1>
+      <h4> This is a list of all the profiles.</h4>
       {profiles.length ?
         <>
           {profiles.map(profile =>
