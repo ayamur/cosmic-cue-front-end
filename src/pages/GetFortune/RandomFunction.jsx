@@ -14,9 +14,6 @@ const RandomFortune = (props) => {
   getRandomInt(props.fortunes.length)
   }, [props.fortunes])
   
-
-
-
   return (
     <>
     <h1>Random Fortune</h1>
