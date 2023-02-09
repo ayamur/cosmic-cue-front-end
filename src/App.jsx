@@ -19,6 +19,7 @@ import NewSign from './pages/NewSign/NewSign'
 import BlogList from './pages/BlogList/BlogList'
 import BlogDetails from './pages/BlogDetails/BlogDetails'
 import NewBlog from './pages/NewBlog/NewBlog'
+import EditBlog from './pages/EditBlog/EditBlog'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -193,7 +194,12 @@ const App = () => {
           </ProtectedRoute>
         }
         />
-
+        <Route path="/blogs/:id/edit" element={
+          <ProtectedRoute user={user}>
+            <EditBlog handleUpdateBlog={handleUpdateBlog} />
+          </ProtectedRoute>
+        }
+        />
       </Routes>
     </>
   )

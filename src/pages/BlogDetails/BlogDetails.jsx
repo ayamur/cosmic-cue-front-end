@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import styles from './BlogDetails.module.css'
 
 // Services
@@ -30,6 +30,7 @@ const BlogDetails = (props) => {
             <AuthorInfo content={blog} />
             {blog.author?._id === props.user.profile &&
               <>
+                <Link to={`/blogs/${id}/edit`} state={blog}>Edit</Link>
                 <button onClick={() => props.handleDeleteBlog(id)}>Delete</button>
               </>
             }
