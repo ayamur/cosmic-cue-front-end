@@ -23,16 +23,15 @@ const MyProfile = (props) => {
       if (!myProfile) return "loading"
       return (
         <>
-        <div className="myProfile">
         <div className="profileImages">
           <img src={Love} alt="" />
+          <h1>Welcome to your Cosmis Cue Profile, {myProfile.name}!</h1>
         </div>
+        <div className="myProfile">
         <div className="profileLinks">
-          <h4>Welcome to your Cosmic Cue profile,</h4>
-          <h4>{myProfile.name}!</h4>
         </div>
         <div className="fortuneLinks">
-          <h4>Click these links to create with cosmos:</h4>
+          <h4>Click these links to create fortunes and signs with cosmos:</h4>
           <Link to="/fortunes/new">Create a New Fortune</Link>
           <Link to='/signs/new'>Create a Sign</Link>
         </div>
