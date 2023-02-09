@@ -1,6 +1,6 @@
-import styles from './FortuneList.module.css'
+// import styles from './FortuneList.module.css'
 import { useEffect, useState } from 'react'
-import FortuneDetails from '../FortuneDetails/FortuneDetails'
+// import FortuneDetails from '../FortuneDetails/FortuneDetails'
 import { Link } from 'react-router-dom'
 
 const FortuneList = ({ fortunes, user , profile}) => {
@@ -13,20 +13,18 @@ const FortuneList = ({ fortunes, user , profile}) => {
   }, [fortunes])
 
   return (
-    <main className={styles.container}>
+    <main className="fortuneListContainer">
+      <h1>Thank you for creating positive fortunes!</h1>
       <>
         {myFortunes ?
         <ul>
-          <h1>All i do is win</h1>
           <>
             {myFortunes.map((fortune) => (
-              <li key={fortune._id}>
-
-
+              <div key={fortune._id} className="fortuneListOne">
                 <Link to={`/fortunes/${fortune._id}`} fortune={fortune} profile={profile}>
-                <h4>{fortune.message}</h4>            
+                <h4> ✨ {fortune.message}</h4>            
                 </Link>             
-              </li>
+              </div>
             ))}
           </>
             </ul>
@@ -36,7 +34,9 @@ const FortuneList = ({ fortunes, user , profile}) => {
           </>
         }
       </>
-      Thank you for viewing your "Fortune List"
+      <div className="fortuneListTwo">
+      <img src="/honeymoon.png" alt="cresent moon icon" />
+      </div>
     </main>
   )
 }

@@ -19,19 +19,16 @@ const FortuneDetails = (props) => {
 
   return (
     <main>
-      <span>
-        {/* <FortuneInfo message={fortune} /> */}
-        <h4>{fortune?.message}</h4>
-        {/* {fortune.owner._id === props.user.profile && */}
-          <>
-            <Link to={`/fortunes/${id}/edit`} state={fortune}>Edit</Link>
-            <button onClick={() => props.handleDeleteFortune(id)}>Delete</button>
-            {/* <button>Delete</button> */}
-          </>
-        {/* } */}
-
-      </span>
- 
+      <div>
+      <h4>Fortune details:</h4>
+      <h4>{fortune?.message?.toUpperCase()}</h4>
+      <>
+        <div className='fortuneDetailsButtons'>
+        <Link to={`/fortunes/${id}/edit`} state={fortune}> Click Here to Edit</Link>  
+        <button onClick={() => props.handleDeleteFortune(id)}>Delete</button>
+        </div>
+      </>
+      </div>
     </main>
   )
 }
