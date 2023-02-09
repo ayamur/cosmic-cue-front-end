@@ -13,6 +13,7 @@ import MyProfile from './pages/myProfile/myProfile'
 import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
+import EditFortune from './pages/EditFortune/EditFortune'
 
 import NewSign from './pages/NewSign/NewSign'
 
@@ -66,6 +67,16 @@ const App = () => {
     }
     fetchAllFortunes()
   }, [user])
+
+  const handleUpdateFortune = async (fortuneData) => {
+    const updateFortune = await fortuneService.update(fortuneData)
+    const updatedFortuneData = fortunes.map(fortune => {
+      return fortuneData._id === fortune._id ? updateFortune : fortune
+    })
+    setBlogs(updatedFortuneData)
+    // setFortunes(fortunes.map((b) => fortuneData._id === b._id ? updatedFortune : b))
+    navigate('/profiles')
+  }
 
   const handleAddSign = async (signData) => {
     const newSign = await signService.create(signData)
@@ -145,6 +156,14 @@ const App = () => {
         }
           path='/fortunes'>
         </Route>
+
+        <Route
+          path='/fortunes/:id/edit' element={
+            <ProtectedRoute user={user}>
+              <EditFortune handleUpdateFortune={handleUpdateFortune} />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path='/change-password'
