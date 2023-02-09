@@ -7,10 +7,10 @@ import AuthorInfo from '../AuthorInfo/AuthorInfo'
 const BlogCard = ({ blog }) => {
   return (
     <Link to={`/blogs/${blog._id}`}>
-      <article className={styles.container}>
+      <article className={styles.container} key={blog._id}>
         <header>
           <span>
-            <h1>{blog.author.name}</h1>
+            <h1>{blog.author?.name}</h1>
           </span>
           <AuthorInfo content={blog} />
         </header>

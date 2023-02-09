@@ -84,6 +84,12 @@ const App = () => {
     navigate('/blogs')
   }
 
+  const handleUpdateBlog = async (blogData) => {
+    const updatedBlog = await blogService.update(blogData)
+    setBlogs(blogs.map((b) => blogData._id === b._id ? updatedBlog : b))
+    navigate('/blogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -187,7 +193,7 @@ const App = () => {
           </ProtectedRoute>
         }
         />
-        
+
       </Routes>
     </>
   )

@@ -3,7 +3,7 @@ import styles from './NewBlog.module.css'
 
 const NewBlog = (props) => {
   const [form, setForm] = useState({
-    text: '',
+    content: '',
   })
 
   const handleChange = ({ target }) => {
@@ -18,12 +18,12 @@ const NewBlog = (props) => {
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="text-input">Enter a Manifestation in the Box Below:</label>
+        <label htmlFor="content-input">Enter a Manifestation in the Box Below:</label>
         <textarea
           required
           type="text"
-          name="text"
-          id="text-input"
+          name="content"
+          id="content-input"
           value={form.text}
           placeholder=""
           onChange={handleChange}
