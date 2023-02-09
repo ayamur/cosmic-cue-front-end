@@ -1,5 +1,5 @@
 import styles from './BlogList.module.css'
-import BlogCard from "../../components/BlogCard/BlogCard"
+import BlogCard from '../../components/BlogCard/BlogCard'
 
 const BlogList = (props) => {
   return (

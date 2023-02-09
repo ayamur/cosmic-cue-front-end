@@ -113,7 +113,7 @@ const App = () => {
           path='/profiles'
           element={
             <ProtectedRoute user={user}>
-              <Profiles user={user}/>
+              <Profiles user={user} />
             </ProtectedRoute>
           }
         />
@@ -160,7 +160,7 @@ const App = () => {
           }
         />
         <Route
-          path="/blogs"
+          path='/blogs'
           element={
             <ProtectedRoute user={user}>
               <BlogList blogs={blogs} />
@@ -168,7 +168,7 @@ const App = () => {
           }
         />
         <Route
-          path="/blogs/:id"
+          path='/blogs/:id'
           element={
             <ProtectedRoute user={user}>
               <BlogDetails user={user} />
@@ -176,21 +176,21 @@ const App = () => {
           }
         />
 
-        <Route 
-          path="/signs/new"  element={ 
-          <ProtectedRoute user={user}>
-            <NewSign handleAddSign={handleAddSign} />
-          </ProtectedRoute> 
-        } 
+        <Route
+          path='/signs/new' element={
+            <ProtectedRoute user={user}>
+              <NewSign handleAddSign={handleAddSign} />
+            </ProtectedRoute>
+          }
         />
 
-        <Route path="/blogs/new" element={
+        <Route path='/blogs/new' element={
           <ProtectedRoute user={user}>
             <NewBlog handleAddBlog={handleAddBlog} />
           </ProtectedRoute>
         }
         />
-        <Route path="/blogs/:id" element={
+        <Route path='/blogs/:i' element={
           <ProtectedRoute user={user}>
             <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog} />
           </ProtectedRoute>

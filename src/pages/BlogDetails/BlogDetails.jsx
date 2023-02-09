@@ -1,28 +1,26 @@
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import styles from './BlogDetails.module.css'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 // Services
 import * as blogService from '../../services/blogService'
 
 // Components
-import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
+import AuthorInfo from '../../components/AuthorInfo/AuthorInfo'
 
 const BlogDetails = (props) => {
   const { id } = useParams()
   const [blog, setBlog] = useState(null)
-  console.log("IS THIS THE ID!?", id)
   useEffect(() => {
     const fetchBlog = async () => {
       const data = await blogService.show(id)
       setBlog(data)
-      console.log("THIS IS A MESSAGE!", blog)
     }
     fetchBlog()
   }, [id])
 
-  if(!blog) return "Loading"
+  if (!blog) return 'Loading....Please Wait.'
 
   return (
     <main className={styles.container}>

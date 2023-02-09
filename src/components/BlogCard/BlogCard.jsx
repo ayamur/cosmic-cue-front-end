@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import styles from './BlogCard.module.css'
 
 // Components
-import AuthorInfo from "../AuthorInfo/AuthorInfo"
+import AuthorInfo from '../AuthorInfo/AuthorInfo'
 
 const BlogCard = ({ blog }) => {
   return (
