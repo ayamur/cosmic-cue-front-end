@@ -46,20 +46,21 @@ CosmicCue is an app designed to bring positivity and inspiration into your life.
 ## Next Steps 🧊 
 
 ---
+- [X]  Let non users get fortunes
 
-[]   Mobile Responsive
+- [ ]   Mobile Responsive
 
-[]  Implement User roles
+- [ ]  Implement User roles
 
-[]  Likes on Postivity Posts
+- [ ]  Likes on Postivity Posts
 
-[]  Ability to save fortunes on profile
+- [ ]  Ability to save fortunes on profile
 
-[]  Limit to one sign per week
+- [ ]  Limit to one sign per week
 
-[]  Save sign to profile
+- [ ]  Save sign to profile
 
-[]  Ability to customize prpfile page (add bio etc)
+- [ ]  Ability to customize profile page (add bio etc)
 
 
 
