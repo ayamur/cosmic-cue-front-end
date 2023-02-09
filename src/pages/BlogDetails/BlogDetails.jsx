@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styles from './BlogDetails.module.css'
-import { Link } from 'react-router-dom'
 
 // Services
 import * as blogService from '../../services/blogService'
