@@ -1,17 +1,14 @@
-import styles from './BlogList.modules.css'
+import styles from './BlogList.module.css'
 
 const BlogList = (props) => {
   return (
-    <>
-      <main className={styles.container}>
-        {props.blogs.map((blog) => (
-          <div key={blog._id}>
-            {blog.title}
-          </div>
-        ))}
-        <h4>Blog List</h4>
-      </main>
-    </>
+    <main className={styles.container}>
+      {props.blogs.map((blog) => (
+        <p key={blog._id}>
+          {blog.title}
+        </p>
+      ))}
+    </main>
   )
 }
 

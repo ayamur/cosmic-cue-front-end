@@ -16,7 +16,6 @@ import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
 
 import NewSign from './pages/NewSign/NewSign'
-import RandomSign from './pages/GetSign/GetSign'
 
 
 // components
@@ -27,6 +26,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as fortuneService from './services/fortuneService'
 import * as signService from './services/signService'
+
 
 // styles
 import './App.css'
@@ -63,20 +63,12 @@ const App = () => {
     fetchAllFortunes()
   }, [user])
 
-  useEffect(() => {
-    const fetchAllSigns = async () => {
-      const data = await signService.index()
-      setSigns(data)
-
-    }
-    fetchAllSigns()
-  }, [user])
-
   const handleAddSign = async (signData) => {
     const newSign = await signService.create(signData)
     setSigns([newSign, ...signs])
     navigate('/signs')
   }
+
 
   return (
     <>
@@ -146,12 +138,7 @@ const App = () => {
           </ProtectedRoute> 
         } 
         />
-        <Route  
-        element={
-            <RandomSign signs={ signs }/>
-          }
-          path='/signs'>
-          </Route>
+
       </Routes>
     </>
   )
