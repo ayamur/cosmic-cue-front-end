@@ -3,6 +3,7 @@ import BlogCard from '../../components/BlogCard/BlogCard'
 import { Link } from 'react-router-dom'
 
 const BlogList = (props) => {
+  // console.log(props.blog, "PROPS DOT BLOG")
   return (
     <>
     <Link to='/blogs/new'>Add your own Manifestation!</Link>
