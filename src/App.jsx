@@ -10,13 +10,13 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 // import FortuneList from './pages/FortuneList/FortuneList'
 import MyProfile from './pages/myProfile/myProfile'
-import BlogList from './pages/BlogList/BlogList'
 import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
 
 import NewSign from './pages/NewSign/NewSign'
 
+import BlogList from './pages/BlogList/BlogList'
 import BlogDetails from './pages/BlogDetails/BlogDetails'
 import NewBlog from './pages/NewBlog/NewBlog'
 
@@ -180,11 +180,14 @@ const App = () => {
           </ProtectedRoute>
         }
         />
+
         <Route path='/blogs/:id' element={
           <ProtectedRoute user={user}>
             <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog} />
           </ProtectedRoute>
-        } />
+        }
+        />
+        
       </Routes>
     </>
   )
