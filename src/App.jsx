@@ -187,8 +187,7 @@ const App = () => {
           </ProtectedRoute>
         }
         />
-
-        <Route path='/blogs/:id' element={
+        <Route path="/blogs/:id" element={
           <ProtectedRoute user={user}>
             <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog} />
           </ProtectedRoute>
