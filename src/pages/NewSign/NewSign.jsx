@@ -30,7 +30,7 @@ const NewSign = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="adjective-input">Adjective</label>
-				<textarea
+				<input
           required
           type="text"
           name="adjective"
