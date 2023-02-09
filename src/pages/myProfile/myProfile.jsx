@@ -19,10 +19,9 @@ const MyProfile = (props) => {
   }, [id])
 
   if (
-    // props.user.profile &&
-    props.user.profile === myProfile._id
+    props.user.profile === myProfile?._id
     ) {
-      
+      if (!myProfile) return "loading"
       return (
         <>
           <h4>Welcome to your profile</h4>
