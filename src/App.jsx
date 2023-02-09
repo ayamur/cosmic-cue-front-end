@@ -10,7 +10,6 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 // import FortuneList from './pages/FortuneList/FortuneList'
 import MyProfile from './pages/myProfile/myProfile'
-import BlogList from './pages/BlogList/BlogList'
 import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
@@ -19,8 +18,10 @@ import EditFortune from './pages/EditFortune/EditFortune'
 import NewSign from './pages/NewSign/NewSign'
 import RandomSign from './pages/GetSign/GetSign'
 
+import BlogList from './pages/BlogList/BlogList'
 import BlogDetails from './pages/BlogDetails/BlogDetails'
 import NewBlog from './pages/NewBlog/NewBlog'
+import EditBlog from './pages/EditBlog/EditBlog'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -106,6 +107,12 @@ const handleDeleteFortune = async (id) => {
   const handleDeleteBlog = async (id) => {
     const deletedBlog = await blogService.deleteBlog(id)
     setBlogs(blogs.filter(b => b._id !== deletedBlog._id))
+    navigate('/blogs')
+  }
+
+  const handleUpdateBlog = async (blogData) => {
+    const updatedBlog = await blogService.update(blogData)
+    setBlogs(blogs.map((b) => blogData._id === b._id ? updatedBlog : b))
     navigate('/blogs')
   }
 
@@ -197,13 +204,13 @@ const handleDeleteFortune = async (id) => {
           path='/blogs/:id'
           element={
             <ProtectedRoute user={user}>
-              <BlogDetails user={user} />
+              <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog}/>
             </ProtectedRoute>
           }
         />
-        <Route  
-        element={
-            <RandomSign signs={ signs }/>
+        <Route
+          element={
+            <RandomSign signs={signs} />
           }
           path='/signs'>
         </Route>
@@ -214,18 +221,18 @@ const handleDeleteFortune = async (id) => {
             </ProtectedRoute>
           }
         />
-
         <Route path='/blogs/new' element={
           <ProtectedRoute user={user}>
             <NewBlog handleAddBlog={handleAddBlog} />
           </ProtectedRoute>
         }
         />
-        <Route path='/blogs/:i' element={
+        <Route path='/blogs/:id/edit' element={
           <ProtectedRoute user={user}>
-            <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog} />
+            <EditBlog handleUpdateBlog={handleUpdateBlog} />
           </ProtectedRoute>
-        } />
+        }
+        />
       </Routes>
     </>
   )

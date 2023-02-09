@@ -1,24 +1,26 @@
 import { useState } from "react"
-import styles from './NewBlog.module.css'
+import { useLocation } from "react-router-dom"
+import styles from './EditBlog.module.css'
 
-const NewBlog = (props) => {
-  const [form, setForm] = useState({
-    content: '',
-  })
+const EditBlog = (props) => {
+  const { state } = useLocation()
+  const [form, setForm] = useState(state)
 
+  console.log(state)
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddBlog(form)
+    props.handleUpdateBlog(form)
   }
 
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="content-input">Enter a Manifestation in the Box Below:</label>
+        <h1>Edit Manifestation</h1>
+        <label htmlFor="text-input">Update Manifestation Below:</label>
         <textarea
           required
           type="text"
@@ -34,4 +36,4 @@ const NewBlog = (props) => {
   )
 }
 
-export default NewBlog
+export default EditBlog
