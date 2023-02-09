@@ -21,13 +21,13 @@
   }
 
   h2{
-    font-size:  26px;
+    font-size:  20px;
+    font-weight: 400;
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
-    font-style: italic;
   }
 
   a {
@@ -93,7 +93,6 @@
     flex-direction: column;
     align-items: center;
   }
-
   .profilesTwo {
     border: black solid .05px;
     border-radius: 10px;
@@ -102,7 +101,6 @@
     justify-content: center;
     align-items: center;
   }
-
 
   .profileNav {
     padding: 20px;
@@ -115,8 +113,7 @@
     font-family: 'Ubuntu', sans-serif;
   }
 
-  .fortuneListContainer {
-    width: 100%;
+  .fortuneList {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -124,22 +121,27 @@
     align-items: center;
   }
 
-  .fortuneListContainer h1 {
+  .fortuneListContainer {
     width: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
     font-family: 'sriracha';
+    border-radius: 15px;
+    background-color:#b4a0e5;
   }
 
   .fortuneListOne {
-    display: flex;
+    width: 50%;
+    margin: auto;
   }
 
   .fortuneListTwo {
     width: 50%;
+    margin: auto;
     display: flex;
     justify-content: center;
+  
   }
 
   form {
