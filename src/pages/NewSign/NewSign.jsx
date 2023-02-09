@@ -19,6 +19,16 @@ const NewSign = (props) => {
   return ( 
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
+        <label htmlFor="adjective-input">Adjective</label>
+        <input
+          required
+          type="text"
+          name="adjective"
+          id="Adjective-input"
+          value={form.adjective}
+          placeholder="Adjective"
+          onChange={handleChange}
+        />
         <label htmlFor="noun-input">Noun</label>
         <input
           required
@@ -27,16 +37,6 @@ const NewSign = (props) => {
           id="noun-input"
           value={form.noun}
           placeholder="Noun"
-          onChange={handleChange}
-        />
-        <label htmlFor="adjective-input">Adjective</label>
-				<input
-          required
-          type="text"
-          name="adjective"
-          id="Adjective-input"
-          value={form.adjective}
-          placeholder="Adjective"
           onChange={handleChange}
         />
         <button type="submit">SUBMIT</button>
