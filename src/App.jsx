@@ -14,7 +14,6 @@ import MyProfile from './pages/myProfile/myProfile'
 import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
-import BlogList from './pages/BlogList/BlogList'
 
 import NewSign from './pages/NewSign/NewSign'
 
@@ -28,7 +27,6 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as fortuneService from './services/fortuneService'
-import * as blogService from './services/blogService'
 import * as signService from './services/signService'
 
 
@@ -55,7 +53,7 @@ const App = () => {
   const handleAddFortune = async (fortuneData) => {
     const newFortune = await fortuneService.create(fortuneData)
     setFortunes([newFortune, ...fortunes])
-    navigate(`/profiles/${user.profile}`)
+    navigate('/profiles/:id')
   }
 
   useEffect(() => {
@@ -66,16 +64,6 @@ const App = () => {
     }
     fetchAllFortunes()
   }, [user])
-
-  useEffect(() => {
-    const fetchAllBlogs = async () => {
-      const data = await blogService.index()
-      setBlogs(data)
-    }
-    fetchAllBlogs()
-  }, [user])
-
-  const [blogs, setBlogs] = useState([])
 
   const handleAddSign = async (signData) => {
     const newSign = await signService.create(signData)
@@ -113,7 +101,9 @@ const App = () => {
           path='/profiles'
           element={
             <ProtectedRoute user={user}>
+
               <Profiles user={user} />
+
             </ProtectedRoute>
           }
         />
@@ -131,8 +121,6 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <FortuneDetails fortunes={fortunes} user={user} />
-              <MyProfile fortunes={fortunes} user={user} />
-              {/* <FortuneList user={user} fortunes={fortunes}/> */}
             </ProtectedRoute>
           }
         />
@@ -159,6 +147,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
         <Route
           path='/blogs'
           element={
@@ -182,6 +171,7 @@ const App = () => {
               <NewSign handleAddSign={handleAddSign} />
             </ProtectedRoute>
           }
+
         />
 
         <Route path='/blogs/new' element={
