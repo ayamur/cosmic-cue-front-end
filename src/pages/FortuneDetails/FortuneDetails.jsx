@@ -21,7 +21,7 @@ const FortuneDetails = (props) => {
     <main>
       <span>
         {/* <FortuneInfo message={fortune} /> */}
-        <h4>party in the usa</h4>
+        <h4>{fortune.message}</h4>
         {/* {fortune.owner._id === props.user.profile && */}
           <>
             <Link to={`/fortunes/${id}/edit`} state={fortune}>Edit</Link>
