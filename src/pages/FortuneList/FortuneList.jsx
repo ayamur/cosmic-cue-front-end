@@ -4,7 +4,8 @@ import FortuneDetails from '../FortuneDetails/FortuneDetails'
 import { Link } from 'react-router-dom'
 
 const FortuneList = ({ fortunes, user }) => {
-  const [myFortunes, setMyFortunes] = useState([])
+  const [myFortunes, setMyFortunes] = useState(null)
+  console.log(fortunes)
 
   useEffect(() => {
     setMyFortunes(fortunes.filter(fortune => fortune.owner._id === user.profile))
@@ -15,22 +16,20 @@ const FortuneList = ({ fortunes, user }) => {
     <main className={styles.container}>
       <>
         {myFortunes ?
+        <ul>
+          <h1>All i do is win</h1>
           <>
-            {myFortunes.map((fortune) => {
+            {myFortunes.map((fortune) => (
+              <li key={fortune._id}>
 
-              return (
-                <>
-                  <Link to={`/fortunes/${fortune._id}`}>
-                    <div key={fortune._id}>
-                      <h3 >Your Fortune: {fortune.message}</h3>
-                      <h4>Lucky Number: {fortune.luckyNumber}</h4>
-                      <h5>Category Chosen: {fortune.category}</h5>
-                    </div>
-                  </Link>
-                </>
-              )
-            })}
+
+                <Link to={`/fortunes/${fortune._id}`} fortune={fortune}>
+                <h4>{fortune.message}</h4>            
+                </Link>             
+              </li>
+            ))}
           </>
+            </ul>
           :
           <>
             <div>Loading ...</div>

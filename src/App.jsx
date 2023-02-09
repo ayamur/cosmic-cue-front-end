@@ -10,10 +10,14 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 // import FortuneList from './pages/FortuneList/FortuneList'
 import MyProfile from './pages/myProfile/myProfile'
+
 import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
 import BlogList from './pages/BlogList/BlogList'
+
+import NewSign from './pages/NewSign/NewSign'
+
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -23,6 +27,8 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as fortuneService from './services/fortuneService'
 import * as blogService from './services/blogService'
+import * as signService from './services/signService'
+
 
 // styles
 import './App.css'
@@ -31,6 +37,8 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
   const [fortunes, setFortunes] = useState([])
+  const [signs, setSigns] = useState([])
+
 
   const handleLogout = () => {
     authService.logout()
@@ -45,7 +53,7 @@ const App = () => {
   const handleAddFortune = async (fortuneData) => {
     const newFortune = await fortuneService.create(fortuneData)
     setFortunes([newFortune, ...fortunes])
-    navigate('/profiles/:id')
+    navigate(`/profiles/${user.profile}`)
   }
 
   useEffect(() => {
@@ -67,6 +75,13 @@ const App = () => {
 
   const [blogs, setBlogs] = useState([])
 
+  const handleAddSign = async (signData) => {
+    const newSign = await signService.create(signData)
+    setSigns([newSign, ...signs])
+    navigate('/signs')
+  }
+
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -84,7 +99,7 @@ const App = () => {
           path='/profiles'
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles user={user}/>
             </ProtectedRoute>
           }
         />
@@ -130,6 +145,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
                 <Route
           path="/blogs"
           element={
@@ -138,6 +154,15 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+
+        <Route 
+          path="/signs/new"  element={ 
+          <ProtectedRoute user={user}>
+            <NewSign handleAddSign={handleAddSign} />
+          </ProtectedRoute> 
+        } 
+        />
+
       </Routes>
     </>
   )
