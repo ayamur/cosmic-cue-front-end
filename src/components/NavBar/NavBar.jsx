@@ -12,7 +12,6 @@ const NavBar = ({ user, handleLogout }) => {
           <li><Link to='/fortunes'>Fortunes</Link></li>
           <li><Link to='/signs'>Sign</Link></li>
           <li><Link to='/blogs'>BLOGS</Link></li>
-          <li><Link to='/blogs/new'>NEW BLOG</Link></li>
         </ul>
         :
         <ul>
