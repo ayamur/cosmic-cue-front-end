@@ -13,7 +13,7 @@ const EditBlog = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Update this line shortly...
+    props.handleUpdateBlog(form)
   }
 
   return (
