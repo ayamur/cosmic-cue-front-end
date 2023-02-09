@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react"
 
 const RandomFortune = (props) => {
-  
-  const[randomFortune, setRandomFortune] =useState({})
+  const[randomFortune, setRandomFortune] =useState({ message: " " , luckyNumber: " "})
 
   const getRandomInt = (max) => {
     const randomNum =  Math.floor(Math.random() * max)
-
     setRandomFortune(props.fortunes[randomNum])
   }
-//dependant on props.length because it's changing
-  useEffect(() => {
-  getRandomInt(props.fortunes.length)
-  }, [props.fortunes])
   
   return (
     <>
