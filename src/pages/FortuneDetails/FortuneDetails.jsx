@@ -21,18 +21,17 @@ const FortuneDetails = (props) => {
     <main>
       <span>
         {/* <FortuneInfo message={fortune} /> */}
-        <h4>{fortune.message}</h4>
+        <h4>{fortune?.message}</h4>
         {/* {fortune.owner._id === props.user.profile && */}
           <>
             <Link to={`/fortunes/${id}/edit`} state={fortune}>Edit</Link>
-            <button>Delete</button>
+            <button onClick={() => props.handleDeleteFortune(id)}>Delete</button>
+            {/* <button>Delete</button> */}
           </>
         {/* } */}
 
       </span>
-      {/* <h4>Fortune category: {fortune?.category.toUpperCase()}</h4>
-      <h4>Fortune message: {fortune?.message}</h4>
-      <h4>Lucky number: {fortune?.luckyNumber}</h4> */}
+ 
     </main>
   )
 }

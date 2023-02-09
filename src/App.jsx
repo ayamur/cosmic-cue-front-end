@@ -74,9 +74,14 @@ const App = () => {
       return fortuneData._id === fortune._id ? updateFortune : fortune
     })
     setBlogs(updatedFortuneData)
-    // setFortunes(fortunes.map((b) => fortuneData._id === b._id ? updatedFortune : b))
     navigate(`/profiles`)
   }
+
+const handleDeleteFortune = async (id) => {
+  const deletedFortune = await fortuneService.deleteFortune(id)
+  setFortunes(fortunes.filter(f => f._id !==deletedFortune._id))
+  navigate('/profiles')
+} 
 
   const handleAddSign = async (signData) => {
     const newSign = await signService.create(signData)
@@ -121,9 +126,7 @@ const App = () => {
           path='/profiles'
           element={
             <ProtectedRoute user={user}>
-
               <Profiles user={user} />
-
             </ProtectedRoute>
           }
         />
@@ -135,12 +138,13 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-
         <Route
           path='/fortunes/:id'
           element={
             <ProtectedRoute user={user}>
-              <FortuneDetails fortunes={fortunes} user={user} />
+              <FortuneDetails fortunes={fortunes} user={user} handleDeleteFortune={handleDeleteFortune}/>
+              {/* <EditFortune handleUpdateFortune={handleUpdateFortune} /> */}
+              {/* <FortuneDetails user={user} handleDeleteFortune={handleDeleteFortune} /> */}
             </ProtectedRoute>
           }
         />
@@ -152,13 +156,11 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-
         <Route element={
           <RandomFortune fortunes={fortunes} />
         }
           path='/fortunes'>
         </Route>
-
         <Route
           path='/fortunes/:id/edit' element={
             <ProtectedRoute user={user}>
@@ -166,6 +168,13 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+          {/* <Route
+          path='/fortunes/:id' element={
+            <ProtectedRoute user={user}>
+              <FortuneDetails user={user} handleDeleteFortune={handleDeleteFortune} />
+            </ProtectedRoute>
+          }
+        /> */}
 
         <Route
           path='/change-password'
