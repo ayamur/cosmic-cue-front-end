@@ -10,7 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 // import FortuneList from './pages/FortuneList/FortuneList'
 import MyProfile from './pages/myProfile/myProfile'
-
+import BlogList from './pages/BlogList/BlogList'
 import FortuneDetails from './pages/FortuneDetails/FortuneDetails'
 import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
@@ -28,6 +28,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as fortuneService from './services/fortuneService'
 import * as signService from './services/signService'
+import * as blogService from './services/blogService'
 
 
 // styles
@@ -38,7 +39,7 @@ const App = () => {
   const navigate = useNavigate()
   const [fortunes, setFortunes] = useState([])
   const [signs, setSigns] = useState([])
-
+  const [blogs, setBlogs] = useState([])
 
   const handleLogout = () => {
     authService.logout()
