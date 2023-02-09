@@ -72,7 +72,6 @@ const App = () => {
     navigate('/signs')
   }
 
-
   const handleAddBlog = async (blogData) => {
     const newBlog = await blogService.create(blogData)
     setBlogs([newBlog, ...blogs])

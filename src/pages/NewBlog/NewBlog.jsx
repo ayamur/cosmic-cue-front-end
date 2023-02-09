@@ -3,7 +3,6 @@ import styles from './NewBlog.module.css'
 
 const NewBlog = (props) => {
   const [form, setForm] = useState({
-    title: '',
     text: '',
   })
 
@@ -19,26 +18,17 @@ const NewBlog = (props) => {
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title-input">Manifestation</label>
-        <input
-          required
-          type="text"
-          name="title"
-          id="title-input"
-          value={form.title}
-          placeholder="Title"
-          onChange={handleChange}
-        />
-        <label htmlFor="text-input">Mantra</label>
+        <label htmlFor="text-input">Enter a Manifestation in the Box Below:</label>
         <textarea
           required
           type="text"
           name="text"
           id="text-input"
           value={form.text}
-          placeholder="Text"
+          placeholder=""
           onChange={handleChange}
         />
+        <button type="submit">SUBMIT</button>
       </form>
     </main>
   )
