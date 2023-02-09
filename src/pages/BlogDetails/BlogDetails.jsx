@@ -11,6 +11,7 @@ import AuthorInfo from '../../components/AuthorInfo/AuthorInfo'
 const BlogDetails = (props) => {
   const { id } = useParams()
   const [blog, setBlog] = useState(null)
+  
   useEffect(() => {
     const fetchBlog = async () => {
       const data = await blogService.show(id)
