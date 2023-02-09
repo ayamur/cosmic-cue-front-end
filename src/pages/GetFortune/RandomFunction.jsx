@@ -16,10 +16,14 @@ const RandomFortune = (props) => {
   
   return (
     <>
-    <h1>Random Fortune</h1>
-    <h1>{randomFortune?.message}</h1>
-    <h1>{randomFortune?.luckyNumber}</h1>
-    <button onClick={() => getRandomInt(props.fortunes.length)}>button</button>
+    <div className="randomFortune">
+    <h1>Need a clue?</h1>
+    <h2>Get a Cosmic Cue</h2>
+    <h4>Your message from the universe is:</h4>
+    <h4>{randomFortune?.message?.toUpperCase()}</h4>
+    <h4>Your lucky number is: {randomFortune?.luckyNumber}</h4>
+    <button onClick={() => getRandomInt(props.fortunes.length)}>Button</button>
+    </div>
     </>
   )
 

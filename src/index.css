@@ -2,44 +2,87 @@
 
 
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
-    'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'Ubuntu', sans-serif;
-}
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Ubuntu', sans-serif;
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
 
-h1 {
-  font-size: 28px;
-}
+  h1 {
+    font-size: 28px;
+  }
 
-h4 {
-  font-size: 16px;
-  font-weight: 400;
-  font-style: italic;
-}
+  h4 {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+  }
 
-a {
-  color: #1e1014;
-  font-weight: 300;
-  text-decoration: none;
-  border-radius: 10px;
-  padding: 10px;
-}
+  a {
+    color: #1e1014;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 10px;
+    /* padding: 10px; */
+  }
 
-a:hover {
-  color: #b4a0e5;
-  background-color: #1e1014;
-  font-weight: 400;
-  text-decoration: none;
-  border-radius: 10px;
-  /* padding: 10px; */
-}
+  a:hover {
+    color: #b4a0e5;
+    /* background-color: #1e1014; */
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 10px;
+    /* padding: 10px; */
+  }
+
+  .randomFortune {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: #FAF9F6;
+    padding: 10%;
+  }
+
+  button {
+    background-color: #1E1014;
+    color: #b4a0e5;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  main {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;  
+  }
+
+  .profilesOne {
+    border: black solid .05px;
+    border-radius: 10px;
+    width: 45%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profilesTwo {
+    border: black solid .05px;
+    border-radius: 10px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
