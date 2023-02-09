@@ -12,31 +12,33 @@ import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
 const BlogDetails = (props) => {
   const { id } = useParams()
   const [blog, setBlog] = useState(null)
-
+  console.log("IS THIS THE ID!?", id)
   useEffect(() => {
     const fetchBlog = async () => {
       const data = await blogService.show(id)
       setBlog(data)
+      console.log("THIS IS A MESSAGE!", blog)
     }
     fetchBlog()
   }, [id])
+
+  if(!blog) return "Loading"
 
   return (
     <main className={styles.container}>
       <article>
         <header>
-          <h1>{blog?.title}</h1>
+          <h1>{blog?.author?.name}</h1>
           <span>
             <AuthorInfo content={blog} />
-            {blog.author._id === props.user.profile &&
+            {blog?.author?._id === props.user.profile &&
               <>
-                <Link to={`/blogs/${id}/edit`} state={blog}>Edit</Link>
                 <button onClick={() => props.handleDeleteBlog(id)}>Delete</button>
               </>
             }
           </span>
         </header>
-        <p>{blog.text}</p>
+        <p>{blog.content}</p>
       </article>
     </main>
   )

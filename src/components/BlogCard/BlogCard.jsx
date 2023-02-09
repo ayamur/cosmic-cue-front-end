@@ -10,11 +10,11 @@ const BlogCard = ({ blog }) => {
       <article className={styles.container}>
         <header>
           <span>
-            <h1>{blog.title}</h1>
+            <h1>{blog.author.name}</h1>
           </span>
           <AuthorInfo content={blog} />
         </header>
-        <p>{blog.text}</p>
+        <p>{blog.content}</p>
       </article>
     </Link>
   )
