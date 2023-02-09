@@ -16,6 +16,7 @@ import NewFortune from './pages/NewFortune/NewFortune'
 import RandomFortune from './pages/GetFortune/RandomFunction'
 
 import NewSign from './pages/NewSign/NewSign'
+import RandomSign from './pages/GetSign/GetSign'
 
 import BlogDetails from './pages/BlogDetails/BlogDetails'
 import NewBlog from './pages/NewBlog/NewBlog'
@@ -71,6 +72,14 @@ const App = () => {
     setSigns([newSign, ...signs])
     navigate('/signs')
   }
+  useEffect(() => {
+    const fetchAllSigns = async () => {
+      const data = await signService.index()
+      setSigns(data)
+
+    }
+    fetchAllSigns()
+  }, [user])
 
 
   const handleAddBlog = async (blogData) => {
@@ -165,14 +174,18 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-
+        <Route  
+        element={
+            <RandomSign signs={ signs }/>
+          }
+          path='/signs'>
+        </Route>
         <Route
           path='/signs/new' element={
             <ProtectedRoute user={user}>
               <NewSign handleAddSign={handleAddSign} />
             </ProtectedRoute>
           }
-
         />
 
         <Route path='/blogs/new' element={

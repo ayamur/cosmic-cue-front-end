@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 const RandomSign = (props) => {
   const [displaySign, setDisplaySign] = useState({ adjective: "", noun: "" });
