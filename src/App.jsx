@@ -50,7 +50,7 @@ const App = () => {
   const handleAddFortune = async (fortuneData) => {
     const newFortune = await fortuneService.create(fortuneData)
     setFortunes([newFortune, ...fortunes])
-    navigate('/profiles/:id')
+    navigate(`/profiles/${user.profile}`)
   }
 
   useEffect(() => {
@@ -85,7 +85,7 @@ const App = () => {
           path='/profiles'
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles user={user}/>
             </ProtectedRoute>
           }
         />

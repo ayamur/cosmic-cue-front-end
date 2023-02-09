@@ -20,9 +20,9 @@ const RandomFortune = (props) => {
   return (
     <>
     <h1>Random Fortune</h1>
-    {/* <h1>{props.fortune[randomNum].message}</h1> */}
     <h1>{randomFortune?.message}</h1>
     <h1>{randomFortune?.luckyNumber}</h1>
+    <button onClick={() => getRandomInt}></button>
     </>
   )
 
