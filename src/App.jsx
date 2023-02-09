@@ -18,6 +18,8 @@ import BlogList from './pages/BlogList/BlogList'
 
 import NewSign from './pages/NewSign/NewSign'
 
+import BlogDetails from './pages/BlogDetails/BlogDetails'
+import NewBlog from './pages/NewBlog/NewBlog'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -82,6 +84,18 @@ const App = () => {
   }
 
 
+  const handleAddBlog = async (blogData) => {
+    const newBlog = await blogService.create(blogData)
+    setBlogs([newBlog, ...blogs])
+    navigate('/blogs')
+  }
+
+  const handleDeleteBlog = async (id) => {
+    const deletedBlog = await blogService.deleteBlog(id)
+    setBlogs(blogs.filter(b => b._id !== deletedBlog._id))
+    navigate('/blogs')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -99,7 +113,7 @@ const App = () => {
           path='/profiles'
           element={
             <ProtectedRoute user={user}>
-              <Profiles user={user}/>
+              <Profiles user={user} />
             </ProtectedRoute>
           }
         />
@@ -126,16 +140,16 @@ const App = () => {
         <Route
           path='/fortunes/new' element={
             <ProtectedRoute user={user}>
-              <NewFortune handleAddFortune={handleAddFortune}/>
-            </ProtectedRoute>  
+              <NewFortune handleAddFortune={handleAddFortune} />
+            </ProtectedRoute>
           }
-          />
+        />
 
-          <Route  element={
-            <RandomFortune  fortunes={fortunes}/>
-          }
+        <Route element={
+          <RandomFortune fortunes={fortunes} />
+        }
           path='/fortunes'>
-          </Route>
+        </Route>
 
         <Route
           path='/change-password'
@@ -145,24 +159,42 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-
-                <Route
-          path="/blogs"
+        <Route
+          path='/blogs'
           element={
             <ProtectedRoute user={user}>
-              <BlogList blogs={blogs}/>
+              <BlogList blogs={blogs} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/blogs/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <BlogDetails user={user} />
             </ProtectedRoute>
           }
         />
 
-        <Route 
-          path="/signs/new"  element={ 
-          <ProtectedRoute user={user}>
-            <NewSign handleAddSign={handleAddSign} />
-          </ProtectedRoute> 
-        } 
+        <Route
+          path='/signs/new' element={
+            <ProtectedRoute user={user}>
+              <NewSign handleAddSign={handleAddSign} />
+            </ProtectedRoute>
+          }
         />
 
+        <Route path='/blogs/new' element={
+          <ProtectedRoute user={user}>
+            <NewBlog handleAddBlog={handleAddBlog} />
+          </ProtectedRoute>
+        }
+        />
+        <Route path='/blogs/:i' element={
+          <ProtectedRoute user={user}>
+            <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog} />
+          </ProtectedRoute>
+        } />
       </Routes>
     </>
   )

@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom'
-// import styles from './NavBar.module.css' //! Import CSS to here reminder
-// import Logo from '../../assets/branding/logo.svg' //! Import logo to here reminder
 
 const NavBar = ({ user, handleLogout }) => {
   return (
@@ -12,7 +10,8 @@ const NavBar = ({ user, handleLogout }) => {
           <li><Link to='' onClick={handleLogout}>LOG OUT</Link></li>
           <li><Link to='/change-password'>Change Password</Link></li>
           <li><Link to='/fortunes'>Fortunes</Link></li>
-          <li><Link to="/blogs">BLOGS</Link></li>
+          <li><Link to='/blogs'>BLOGS</Link></li>
+          <li><Link to='/blogs/new'>NEW BLOG</Link></li>
         </ul>
         :
         <ul>
