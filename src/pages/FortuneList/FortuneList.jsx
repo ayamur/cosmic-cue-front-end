@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import FortuneDetails from '../FortuneDetails/FortuneDetails'
 import { Link } from 'react-router-dom'
 
-const FortuneList = ({ fortunes, user }) => {
+const FortuneList = ({ fortunes, user , profile}) => {
   const [myFortunes, setMyFortunes] = useState(null)
   console.log(fortunes)
 
@@ -23,7 +23,7 @@ const FortuneList = ({ fortunes, user }) => {
               <li key={fortune._id}>
 
 
-                <Link to={`/fortunes/${fortune._id}`} fortune={fortune}>
+                <Link to={`/fortunes/${fortune._id}`} fortune={fortune} profile={profile}>
                 <h4>{fortune.message}</h4>            
                 </Link>             
               </li>
