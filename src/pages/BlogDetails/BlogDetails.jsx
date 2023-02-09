@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './BlogDetails.module.css'
 
 // Services
@@ -9,7 +9,7 @@ import * as blogService from '../../services/blogService'
 import AuthorInfo from '../../components/AuthorInfo/AuthorInfo'
 
 const BlogDetails = (props) => {
-  const { id } = useParams()
+  const { id } = props._id
   const [blog, setBlog] = useState(null)
   useEffect(() => {
     const fetchBlog = async () => {

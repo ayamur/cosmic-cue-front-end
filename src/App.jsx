@@ -116,6 +116,15 @@ const handleDeleteFortune = async (id) => {
     navigate('/blogs')
   }
 
+  useEffect(() => {
+    const fetchAllBlogs = async () => {
+      const data = await blogService.index()
+      setBlogs(data)
+
+    }
+    fetchAllBlogs()
+  }, [user])
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -204,7 +213,7 @@ const handleDeleteFortune = async (id) => {
           path='/blogs/:id'
           element={
             <ProtectedRoute user={user}>
-              <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog}/>
+              <BlogDetails user={user} blogs={blogs} handleDeleteBlog={handleDeleteBlog}/>
             </ProtectedRoute>
           }
         />
