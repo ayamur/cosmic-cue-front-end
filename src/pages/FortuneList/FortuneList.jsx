@@ -1,9 +1,9 @@
-import styles from './FortuneList.module.css'
+// import styles from './FortuneList.module.css'
 import { useEffect, useState } from 'react'
-import FortuneDetails from '../FortuneDetails/FortuneDetails'
+// import FortuneDetails from '../FortuneDetails/FortuneDetails'
 import { Link } from 'react-router-dom'
 
-const FortuneList = ({ fortunes, user , profile}) => {
+const FortuneList = ({ fortunes, user, profile }) => {
   const [myFortunes, setMyFortunes] = useState(null)
   console.log(fortunes)
 
@@ -13,30 +13,35 @@ const FortuneList = ({ fortunes, user , profile}) => {
   }, [fortunes])
 
   return (
-    <main className={styles.container}>
+    <main className="fortuneList">
       <>
-        {myFortunes ?
-        <ul>
-          <h1>All i do is win</h1>
-          <>
-            {myFortunes.map((fortune) => (
-              <li key={fortune._id}>
-
-
-                <Link to={`/fortunes/${fortune._id}`} fortune={fortune} profile={profile}>
-                <h4>{fortune.message}</h4>            
-                </Link>             
-              </li>
-            ))}
-          </>
-            </ul>
-          :
-          <>
-            <div>Loading ...</div>
-          </>
-        }
+        <h1>Thank you for creating these positive fortunes!</h1>
+        <h2>These fortunes are being sent to the random fortune generator, and will be delivered to the person who is meant to read them.</h2>
+        <div className="fortuneListContainer">
+          {myFortunes ?
+            <>
+              <>
+          <div className="fortuneListTwo">
+            <img src="/honeymoon.png" alt="cresent moon icon" />
+          </div>
+                <div className="fortuneListOne">
+                {myFortunes.map((fortune) => (
+                  <div key={fortune._id} >
+                    <Link to={`/fortunes/${fortune._id}`} fortune={fortune} profile={profile}>
+                      <h4> ✨ {fortune.message}</h4>
+                    </Link>
+                  </div>
+                ))}
+                </div>
+              </>
+            </>
+            :
+            <>
+              <div>Loading ...</div>
+            </>
+          }
+        </div>
       </>
-      Thank you for viewing your "Fortune List"
     </main>
   )
 }

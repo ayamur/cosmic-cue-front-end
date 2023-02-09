@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation } from 'react-router-dom'
-import styles from './EditFortune.module.css'
+// import styles from './EditFortune.module.css'
 
 const EditFortune = (props) => {
   const { state } = useLocation()

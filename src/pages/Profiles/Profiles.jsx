@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 // import MyProfile from '../myProfile/myProfile'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Profiles = (user) => {
@@ -17,23 +17,33 @@ const Profiles = (user) => {
 
   return (
     <>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.length ?
-        <>
-          {profiles.map(profile =>
-          <div key={profile._id}>
+      <main>
 
-            <Link to={`/profiles/${profile._id}`} profile={profile} key={profile._id} user={user}>
-            {profile.name}</Link>
+        <section className="profilesOne">
+          <h1>Welcome to Cosmic Cue</h1>
+          <h4> This is a list of all the profiles.</h4>
+          {profiles.length ?
+            <>
+              {profiles.map(profile =>
+                <div key={profile._id}>
 
-          </div>
-          )}
-        </>
-        :
-        <>
-        <p>No profiles yet</p>
-        </>
-      }
+                  <Link to={`/profiles/${profile._id}`} profile={profile} key={profile._id} user={user}>
+                    {profile.name}</Link>
+
+                </div>
+              )}
+            </>
+            :
+            <>
+              <p>No profiles yet</p>
+            </>
+          }
+
+        </section>
+        <section className="profilesTwo">
+          <img src="/honeymoon.png" alt="cresent moon icon" />
+        </section>
+      </main>
     </>
   )
 }
