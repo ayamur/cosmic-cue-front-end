@@ -10,7 +10,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   width: 100%;
   height: 100vh;
-  background: url('./assets/icons/CosmicCueBackground.png');
+  /* background: url('./assets/icons/CosmicCueBackground.png'); */
   /* background: url('./assets/icons/GreenStars.jpg') */
   overflow-y: scroll;
 }
@@ -261,4 +261,17 @@ form select {
   justify-content: center;
   margin: auto;
   width: 75%;
+  background-color: #FAF9F6;
+}
+
+.randomFortune{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 75%;
+  background-color: #FAF9F6;
+  border: black 2px solid;
+  border-radius: 10px;
 }
