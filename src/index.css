@@ -1,180 +1,241 @@
-  @import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: 'Ubuntu', sans-serif;
-  }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Ubuntu', sans-serif;
+  width: 100%;
+  /* background: url('./assets/icons/CosmicCueBackground.png') */
+  /* background: url('./assets/icons/GreenStars.jpg') */
+}
 
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
+#root {
+  height: 100vh;
+}
 
-  h1 {
-    font-size: 28px;
-    font-family: 'sriracha';
-  }
+main {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  h2{
-    font-size:  20px;
-    font-weight: 400;
-  }
+}
 
-  h4 {
-    font-size: 18px;
-    font-weight: 400;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 
-  a {
-    color: #1e1014;
-    font-weight: 300;
-    text-decoration: none;
-    border-radius: 10px;
-    /* padding: 10px; */
-  }
+h1 {
+  font-size: 28px;
+  font-family: 'sriracha';
+}
 
-  a:hover {
-    color: #69587d;
-    /* background-color: #1e1014; */
-    font-weight: 400;
-    text-decoration: none;
-    border-radius: 10px;
-    /* padding: 10px; */
-  }
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
 
-  .randomFortune {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    background-color: #FAF9F6;
-    padding: 10%;
-  }
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
 
-  button {
-    background-color: #1E1014;
-    color: #b4a0e5;
-    font-size: 16px;
-    font-weight: bold;
-  }
+a {
+  color: #1e1014;
+  font-weight: 300;
+  text-decoration: none;
+}
 
-  button:hover {
-    background-color: #b4a0e5;;
-    color: #1E1014;
-    font-size: 16px;
-    font-weight: bold;
-  }
+a:hover {
+  color: #69587d;
+  font-weight: 400;
+  text-decoration: none;
+}
 
-  .editButton {
-    background-color: #b4a0e5;
-    display: flex;
-    justify-content: center;
-  }
+.randomFortune {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: #FAF9F6;
+  padding: 10%;
+}
 
-  main {
-    margin: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+button {
+  background-color: #1E1014;
+  color: #b4a0e5;
+  font-size: 16px;
+  font-weight: bold;
+}
 
-  .profilesOne {
-    border: black solid .05px;
-    border-radius: 10px;
-    width: 45%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .profilesTwo {
-    border: black solid .05px;
-    border-radius: 10px;
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+button:hover {
+  background-color: #b4a0e5;
+  color: #1E1014;
+  font-size: 16px;
+  font-weight: bold;
+}
 
-  .profileNav {
-    padding: 20px;
-    font-family: 'Ubuntu', sans-serif;
-  }
+.editButton {
+  background-color: #b4a0e5;
+  display: flex;
+  justify-content: center;
+}
 
-  .fortuneLinks {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Ubuntu', sans-serif;
-  }
+.profiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
-  .fortuneList {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.profilesOne {
+  border: black solid .05px;
+  border-radius: 10px;
+  width: 45%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FAF9F6;
+}
 
-  .fortuneListContainer {
-    width: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    font-family: 'sriracha';
-    border-radius: 15px;
-    background-color:#b4a0e5;
-  }
+.profileLinks{
+  display: flex;
+  background-color: #FAF9F6;
+}
 
-  .fortuneListOne {
-    width: 50%;
-    margin: auto;
-  }
+.profilesOne a{
+  color:#1e1014;
+  margin:10px;
+}
 
-  .fortuneListTwo {
-    width: 50%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  
-  }
+.profilesOne a:hover{
+  background-color: #69587d;
+  color:#FAF9F6;
+  margin:10px;
+  border-radius: 2px;
+}
 
-  form {
-    padding: 16px 32px;
-    background-color: grey;
-    border-radius: 15px;
-    border: .05px solid black;
-    display: flex;
-    flex-direction: column;
-    background-color: #eae6f3;
-  }
+.profilesTwo {
+  border: black solid .05px;
+  border-radius: 10px;
+  width: 45%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FAF9F6;
+}
 
-  form label {
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    padding: 8px;
-  }
+.myProfile {
+  padding: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #eae6f3;
+  display: flex;
+}
 
-  form input {
-    padding: 8px;
-    border-radius: 5px;
-  }
+.profileImages {
+  background-color: #eae6f3;
+  padding: 20px;
+}
 
-  form button {
-    padding-top: 16px;
-    margin-top: 16px;
-  }
+.fortuneLinks {
+  display: flex;
+  flex-direction: column;
+}
 
-  .randomSign {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    width: 75%;
-  }
+.fortuneLinks a {
+  color: #1E1014;
+  background-color: #b4a0e5;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.fortuneLinks a:hover {
+  color: #1E1014; 
+  background-color: #FAF9F6;
+}
+
+.fortuneList {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fortuneListContainer {
+  width: 100%;
+  margin: 0;
+  font-family: 'sriracha';
+  background-color: #b4a0e5;
+}
+
+.fortuneListOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.fortuneListOne a{
+  color: #1E1014; ;
+}
+
+.fortuneListOne a:hover{
+  color: #1E1014; 
+  background-color: #FAF9F6;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.fortuneListTwo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+form {
+  padding: 16px 32px;
+  background-color: grey;
+  border-radius: 15px;
+  border: .05px solid black;
+  display: flex;
+  flex-direction: column;
+  background-color: #eae6f3;
+}
+
+form label {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  padding: 8px;
+}
+
+form input {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+form button {
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.randomSign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 75%;
+}
