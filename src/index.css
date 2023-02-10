@@ -60,15 +60,21 @@ h4 {
 }
 
 a {
-  color: #1e1014;
-  font-weight: 300;
+  color: #69587d;
+  font-weight: 500;
   text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 10px;
+
 }
 
 a:hover {
-  color: #69587d;
   font-weight: 400;
   text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #b4a0e5;
+  color: #1E1014;
+  height: 24px;
 }
 
 .randomFortune {
