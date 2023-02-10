@@ -10,14 +10,11 @@ import AuthorInfo from '../../components/AuthorInfo/AuthorInfo'
 
 const BlogDetails = (props) => {
   const { id } = useParams()
-  // const id  = blog?._id
-  console.log("PROPS!", props)
   const [blog, setBlog] = useState({})
   
   useEffect(() => {
     const fetchBlog = async () => {
       const data = await blogService.show(id)
-      console.log("BLG DEETS DATA", data)
       setBlog(data)
     }
     fetchBlog()
@@ -30,17 +27,18 @@ const BlogDetails = (props) => {
       <article>
         <header>
           <h1>{blog.author?.name}</h1>
+            <h1>{blog.content}</h1>
           <span>
             <AuthorInfo content={blog} />
             {blog.author?._id === props.user.profile &&
-              <>
-                <Link to={`/blogs/${id}/edit`} state={blog}>Edit</Link>
-                <button onClick={() => props.handleDeleteBlog(id)}>Delete</button>
-              </>
+              <div className="blogs">
+                <Link to={`/blogs/${id}/edit`} state={blog}>
+                  <button>EDIT</button></Link>
+                <button onClick={() => props.handleDeleteBlog(id)}>DELETE</button>
+              </div>
             }
           </span>
         </header>
-        <p>{blog.content}</p>
       </article>
     </main>
   )
