@@ -24,7 +24,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 code {
@@ -102,18 +101,20 @@ button:hover {
 .profiles {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
+  background-color:#FAF9F6;
+  border: green solid 2px;
+  border-radius: 10px;
 }
 
 .profilesOne {
-  border: black solid .05px;
-  border-radius: 10px;
-  width: 45%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #FAF9F6;
+  border-radius: 10px;
 }
 
 .profileLinks{
@@ -134,7 +135,6 @@ button:hover {
 }
 
 .profilesTwo {
-  border: black solid .05px;
   border-radius: 10px;
   width: 45%;
   padding: 20px;

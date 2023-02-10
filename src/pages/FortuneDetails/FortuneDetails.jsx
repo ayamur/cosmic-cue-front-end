@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
-import styles from './FortuneDetails.module.css'
+import Food from '../../assets/icons/Food.png'
 
 import * as fortuneService from '../../services/fortuneService'
 
@@ -20,6 +20,7 @@ const FortuneDetails = (props) => {
   return (
     <main>
       <div>
+        <img src={Food} alt="" />
       <h4>Fortune details:</h4>
       <h4>{fortune?.message?.toUpperCase()}</h4>
       <>
