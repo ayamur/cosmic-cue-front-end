@@ -18,7 +18,6 @@ const Profiles = (user) => {
     <>
       <main >
         <div className="profiles">
-
           <section className="profilesTwo">
             <img src="/logo.png" alt="cresent moon icon" />
           </section>

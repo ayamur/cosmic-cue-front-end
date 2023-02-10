@@ -18,19 +18,22 @@ const FortuneDetails = (props) => {
   }, [id])
 
   return (
+    <>
+      <h1>You have the power to edit or delete this fortune:</h1>
     <main>
-      <div>
+      <div className="fortuneDetails">
         <img src={Food} alt="" />
       <h4>Fortune details:</h4>
       <h4>{fortune?.message?.toUpperCase()}</h4>
       <>
         <div className='fortuneDetailsButtons'>
-        <Link to={`/fortunes/${id}/edit`} state={fortune}> Click Here to Edit</Link>  
-        <button onClick={() => props.handleDeleteFortune(id)}>Delete</button>
+        <Link to={`/fortunes/${id}/edit`} state={fortune}><button>EDIT</button></Link>  
+        <button onClick={() => props.handleDeleteFortune(id)}>DELETE</button>
         </div>
       </>
       </div>
     </main>
+    </>
   )
 }
 
