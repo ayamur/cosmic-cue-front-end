@@ -7,12 +7,16 @@ const BlogList = (props) => {
     <>
     <Link to='/blogs/new'>
       <button>Click Here to Add Your Manifestation</button></Link>
+      <div className={styles.blogsInfo}>
+        <h1>POSITIVITY BOARD
+          </h1>
+          <h4>Post your manifestations and positve affirmations here: </h4></div>
     
-    <main className={styles.container}>
+    <div className={styles.container}>
       {props.blogs.map((blog) => (
         <BlogCard key={blog._id} blog={blog} />
       ))}
-    </main>
+    </div>
     </>
   )
 }

@@ -26,8 +26,8 @@ const BlogDetails = (props) => {
     <main className={styles.container}>
       <article>
         <header>
-          <h1>{blog.author?.name}</h1>
-            <h1>{blog.content}</h1>
+          <h1>Author: {blog.author?.name}</h1>
+            <h1>Blog: {blog.content}</h1>
           <span>
             <AuthorInfo content={blog} />
             {blog.author?._id === props.user.profile &&

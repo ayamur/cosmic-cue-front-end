@@ -20,7 +20,11 @@ const NewFortune = (props) => {
 
   return (
     <main>
-      <div>
+      <div className="addFortune">
+        <img src="https://i.imgur.com/ZYdyAnf.png" alt="" />
+        <h4>Enter a message and a lucky number here. Your cosmic cue will be sent to another user who has requested a fortune from the universe!</h4>
+        <h1>Create a cosmic cue</h1>
+      </div>
       <form onSubmit={handleSubmit}>
         <label htmlFor='message-input'>Message:</label>
         <input required
@@ -55,9 +59,6 @@ const NewFortune = (props) => {
         </select>
         <button type='submit'>SUBMIT</button>
       </form>
-
-
-      </div>
     </main>
   )
 }

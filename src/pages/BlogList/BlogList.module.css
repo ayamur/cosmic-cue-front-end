@@ -1,8 +1,34 @@
 .container {
   width: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
+
+.blogsInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.blogsInfo h1{
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.blogsInfo h4{
+  display: flex;
+  justify-content: center;
+  color: #1E1014;
+  background-color: #B4A0E5;
+  width: 75%;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+
 
 @media only screen and (min-width: 900px) {
   .container {

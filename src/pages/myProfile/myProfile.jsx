@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { getMyProfileInfo } from '../../services/profileService'
 import FortuneList from '../FortuneList/FortuneList'
 import { Link } from 'react-router-dom'
-import Love from '../../assets/icons/Love.png'
+
 
 const MyProfile = (props) => {
   const [myProfile, setMyProfile] = useState({})
@@ -24,7 +24,7 @@ const MyProfile = (props) => {
       return (
         <>
         <div className="profileImages">
-          <img src={Love} alt="" />
+          <img src="https://i.imgur.com/oIKs9Wp.png" alt="" />
           <h1>Welcome to your Cosmic Cue Profile, {myProfile.name}!</h1>
         </div>
         <div className="myProfile">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Travel from '../../assets/icons/Travel.png'
+
 
 const FortuneList = ({ fortunes, user, profile }) => {
   const [myFortunes, setMyFortunes] = useState(null)
@@ -22,7 +22,7 @@ const FortuneList = ({ fortunes, user, profile }) => {
             <>
               <>
           <div className="fortuneListTwo">
-            <img src={Travel} alt="cresent moon icon" />
+        <img src="/icons/Food.png" alt="" />
           </div>
                 <div className="fortuneListOne">
                 {myFortunes.map((fortune) => (

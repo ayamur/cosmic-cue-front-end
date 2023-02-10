@@ -3,6 +3,7 @@ import * as profileService from '../../services/profileService'
 import { Link } from 'react-router-dom'
 
 
+
 const Profiles = (user) => {
   const [profiles, setProfiles] = useState([])
 
@@ -19,7 +20,7 @@ const Profiles = (user) => {
       <main >
         <div className="profiles">
           <section className="profilesTwo">
-            <img src="/logo.png" alt="cresent moon icon" />
+            <img src="https://i.imgur.com/k4iOvKo.png" alt="" />
           </section>
           <section className="profilesOne">
             <h1>Welcome to Cosmic Cue</h1>
