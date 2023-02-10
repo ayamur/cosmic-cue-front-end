@@ -78,11 +78,11 @@ const App = () => {
     navigate(`/profiles`)
   }
 
-const handleDeleteFortune = async (id) => {
-  const deletedFortune = await fortuneService.deleteFortune(id)
-  setFortunes(fortunes.filter(f => f._id !==deletedFortune._id))
-  navigate('/profiles')
-} 
+  const handleDeleteFortune = async (id) => {
+    const deletedFortune = await fortuneService.deleteFortune(id)
+    setFortunes(fortunes.filter(f => f._id !== deletedFortune._id))
+    navigate('/profiles')
+  }
 
   const handleAddSign = async (signData) => {
     const newSign = await signService.create(signData)
@@ -115,6 +115,25 @@ const handleDeleteFortune = async (id) => {
     setBlogs(blogs.map((b) => blogData._id === b._id ? updatedBlog : b))
     navigate('/blogs')
   }
+
+  useEffect(() => {
+    const fetchAllBlogs = async () => {
+      const data = await blogService.index()
+      setBlogs(data)
+
+    }
+    fetchAllBlogs()
+  }, [user])
+
+  // useEffect(() => {
+  //   const fetchAllSignsAndBlogs = async () => {
+  //     const signData = await signService.index()
+  //     const blogData = await blogService.index()
+  //     setSigns(signData)
+  //     setBlogs(blogData)
+  //   }
+  //   fetchAllSignsAndBlogs()
+  // }, [user])
 
   return (
     <>
@@ -149,7 +168,7 @@ const handleDeleteFortune = async (id) => {
           path='/fortunes/:id'
           element={
             <ProtectedRoute user={user}>
-              <FortuneDetails fortunes={fortunes} user={user} handleDeleteFortune={handleDeleteFortune}/>
+              <FortuneDetails fortunes={fortunes} user={user} handleDeleteFortune={handleDeleteFortune} />
             </ProtectedRoute>
           }
         />
@@ -196,7 +215,7 @@ const handleDeleteFortune = async (id) => {
           path='/blogs/:id'
           element={
             <ProtectedRoute user={user}>
-              <BlogDetails user={user}  handleDeleteBlog={handleDeleteBlog}/>
+              <BlogDetails user={user} handleDeleteBlog={handleDeleteBlog} />
             </ProtectedRoute>
           }
         />
