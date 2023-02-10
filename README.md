@@ -1,4 +1,4 @@
-![](./public/Landingpage.png)
+![](./public/landingpage.png)
 
 #  _Cosmic Cue_ - A Fortune Telling App
 
@@ -58,4 +58,4 @@ Cosmic Cue is an app designed to bring positivity and inspiration into your life
 <a href="https://www.linkedin.com/in/ayalamuruch/" title="Celestial Icons">Celestial Icons and art by Aya! </a>
 
 **[ Click here to use Cosmic Cue](https://main--cosmic-cue.netlify.app/)**
-![](./public/Logo.png)
+![](https://i.imgur.com/k4iOvKo.png)
