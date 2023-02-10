@@ -27,11 +27,6 @@ main {
 
 }
 
-main div {
-  background-color: white;
-
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -56,17 +51,12 @@ a {
   color: #1e1014;
   font-weight: 300;
   text-decoration: none;
-  border-radius: 10px;
-  /* padding: 10px; */
 }
 
 a:hover {
   color: #69587d;
-  /* background-color: #1e1014; */
   font-weight: 400;
   text-decoration: none;
-  border-radius: 10px;
-  /* padding: 10px; */
 }
 
 .randomFortune {
@@ -88,7 +78,6 @@ button {
 
 button:hover {
   background-color: #b4a0e5;
-  ;
   color: #1E1014;
   font-size: 16px;
   font-weight: bold;
@@ -117,6 +106,23 @@ button:hover {
   background-color: #FAF9F6;
 }
 
+.profileLinks{
+  display: flex;
+  background-color: #FAF9F6;
+}
+
+.profilesOne a{
+  color:#1e1014;
+  margin:10px;
+}
+
+.profilesOne a:hover{
+  background-color: #69587d;
+  color:#FAF9F6;
+  margin:10px;
+  border-radius: 2px;
+}
+
 .profilesTwo {
   border: black solid .05px;
   border-radius: 10px;
@@ -128,12 +134,6 @@ button:hover {
   background-color: #FAF9F6;
 }
 
-/* img{
-    height: auto;
-    width: 80%;
-    object-fit: cover;
-  } */
-
 .myProfile {
   padding: 20px;
   font-family: 'Ubuntu', sans-serif;
@@ -142,7 +142,7 @@ button:hover {
 }
 
 .profileImages {
-  background-color: #FAF9F6;
+  background-color: #eae6f3;
   padding: 20px;
 }
 
@@ -156,11 +156,12 @@ button:hover {
   background-color: #b4a0e5;
   padding: 5px;
   margin: 10px;
-
+  border-radius: 10px;
+  font-weight: 500;
 }
 
 .fortuneLinks a:hover {
-  color: #1E1014;
+  color: #1E1014; 
   background-color: #FAF9F6;
 }
 
@@ -175,26 +176,33 @@ button:hover {
 .fortuneListContainer {
   width: 100%;
   margin: 0;
-  display: flex;
-  justify-content: center;
   font-family: 'sriracha';
-  border-radius: 15px;
   background-color: #b4a0e5;
 }
 
 .fortuneListOne {
-  width: 50%;
-  height: 50%;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.fortuneListOne a{
+  color: #1E1014; ;
+}
+
+.fortuneListOne a:hover{
+  color: #1E1014; 
+  background-color: #FAF9F6;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .fortuneListTwo {
-  width: 50%;
-  height: 50%;
-  margin: auto;
   display: flex;
   justify-content: center;
-
+  padding: 20px;
 }
 
 form {
