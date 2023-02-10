@@ -74,7 +74,7 @@ a:hover {
   font-family: 'Ubuntu', sans-serif;
   background-color: #b4a0e5;
   color: #1E1014;
-  height: 24px;
+  /* height: 24px; */
 }
 
 .randomFortune {
