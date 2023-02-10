@@ -32,6 +32,16 @@ code {
     monospace;
 }
 
+.landing{
+  display: flex;
+  flex-direction: column;
+  border: black solid 2px;
+  width: 75%;
+  background-color: #FAF9F6;
+  border-radius: 15px;
+  padding: 20px;
+}
+
 h1 {
   font-size: 28px;
   font-family: 'sriracha';
