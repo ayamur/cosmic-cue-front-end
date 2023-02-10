@@ -12,13 +12,13 @@
   align-items: center;
 }
 
-.blogsInfo h1{
+.blogsInfo h1 {
   display: flex;
   justify-content: center;
   color: white;
 }
 
-.blogsInfo h4{
+.blogsInfo h4 {
   display: flex;
   justify-content: center;
   color: #1E1014;

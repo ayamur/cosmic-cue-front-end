@@ -44,64 +44,64 @@ const SignupForm = props => {
 
   return (
     <form
-      autoComplete="off"
+      autoComplete='off'
       onSubmit={handleSubmit}
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
+        <label htmlFor='name' className={styles.label}>Name</label>
         <input
-          type="text"
-          autoComplete="off"
-          id="name"
+          type='text'
+          autoComplete='off'
+          id='name'
           value={name}
-          name="name"
+          name='name'
           onChange={handleChange}
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
+        <label htmlFor='email' className={styles.label}>Email</label>
         <input
-          type="text"
-          autoComplete="off"
-          id="email"
+          type='text'
+          autoComplete='off'
+          id='email'
           value={email}
-          name="email"
+          name='email'
           onChange={handleChange}
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
+        <label htmlFor='password' className={styles.label}>Password</label>
         <input
-          type="password"
-          autoComplete="off"
-          id="password"
+          type='password'
+          autoComplete='off'
+          id='password'
           value={password}
-          name="password"
+          name='password'
           onChange={handleChange}
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="confirm" className={styles.label}>
+        <label htmlFor='confirm' className={styles.label}>
           Confirm Password
         </label>
         <input
-          type="password"
-          autoComplete="off"
-          id="confirm"
+          type='password'
+          autoComplete='off'
+          id='confirm'
           value={passwordConf}
-          name="passwordConf"
+          name='passwordConf'
           onChange={handleChange}
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="photo-upload" className={styles.label}>
+        <label htmlFor='photo-upload' className={styles.label}>
           Upload Photo
         </label>
         <input
-          type="file"
-          id="photo-upload"
-          name="photo"
+          type='file'
+          id='photo-upload'
+          name='photo'
           onChange={handleChangePhoto}
         />
       </div>
@@ -109,7 +109,7 @@ const SignupForm = props => {
         <button disabled={isFormInvalid()} className={styles.button}>
           Sign Up
         </button>
-        <Link to="/">
+        <Link to='/'>
           <button>Cancel</button>
         </Link>
       </div>

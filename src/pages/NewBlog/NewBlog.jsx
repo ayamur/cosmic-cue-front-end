@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from 'react'
 import styles from './NewBlog.module.css'
 
 const NewBlog = (props) => {
@@ -18,17 +18,17 @@ const NewBlog = (props) => {
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="content-input">Enter Your Manifestation in the Box:</label>
+        <label htmlFor='content-input'>Enter Your Manifestation in the Box:</label>
         <textarea
           required
-          type="text"
-          name="content"
-          id="content-input"
+          type='text'
+          name='content'
+          id='content-input'
           value={form.text}
-          placeholder=""
+          placeholder=''
           onChange={handleChange}
         />
-        <button type="submit">SUBMIT</button>
+        <button type='submit'>SUBMIT</button>
       </form>
     </main>
   )

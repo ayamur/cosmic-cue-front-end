@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const NewFortune = (props) => {
   const [form, setForm] = useState({
@@ -19,11 +19,11 @@ const NewFortune = (props) => {
 
   return (
     <main>
-      <div className="addFortune">
-        <div className="iconsList">
-        <img src="https://i.imgur.com/6E6zQUh.png" alt="" />
-        <img src="https://i.imgur.com/oIKs9Wp.png" alt="" />
-        <img src="https://i.imgur.com/ZYdyAnf.png" alt="" />
+      <div className='addFortune'>
+        <div className='iconsList'>
+          <img src='https://i.imgur.com/6E6zQUh.png' alt='' />
+          <img src='https://i.imgur.com/oIKs9Wp.png' alt='' />
+          <img src='https://i.imgur.com/ZYdyAnf.png' alt='' />
         </div>
         <h4>Enter a short message and a lucky number here. Your cosmic cue will be sent to another user who has requested a fortune from the universe!</h4>
         <h1>Create a cosmic cue</h1>

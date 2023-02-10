@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 
 const RandomFortune = (props) => {
-  const [randomFortune, setRandomFortune] = useState({ message: " ", luckyNumber: " " })
+  const [randomFortune, setRandomFortune] = useState({ message: ' ', luckyNumber: ' ' })
 
   const getRandomInt = (max) => {
     const randomNum = Math.floor(Math.random() * max)
@@ -11,11 +11,11 @@ const RandomFortune = (props) => {
   return (
     <>
       <main>
-        <div className="randomFortune">
-          <div className="iconsList">
-            <img src="https://i.imgur.com/ZYdyAnf.png" alt="" />
-            <img src="https://i.imgur.com/6E6zQUh.png" alt="" />
-            <img src="https://i.imgur.com/oIKs9Wp.png" alt="" />
+        <div className='randomFortune'>
+          <div className='iconsList'>
+            <img src='https://i.imgur.com/ZYdyAnf.png' alt='' />
+            <img src='https://i.imgur.com/6E6zQUh.png' alt='' />
+            <img src='https://i.imgur.com/oIKs9Wp.png' alt='' />
           </div>
           <h1>Need a clue?</h1>
           <h2>Get a Cosmic Cue!</h2>

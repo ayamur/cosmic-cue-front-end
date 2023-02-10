@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom'
 
 const EditFortune = (props) => {
@@ -17,10 +17,10 @@ const EditFortune = (props) => {
 
   return (
     <main>
-      <div className="editFortune">
+      <div className='editFortune'>
         <h1>Edit form</h1>
         <h4>Edit your fortune using this form. Click submit when you are finished.</h4>
-        <img src="https://i.imgur.com/ZYdyAnf.png" alt="" />
+        <img src='https://i.imgur.com/ZYdyAnf.png' alt='' />
       </div>
       <form onSubmit={handleSubmit}>
         <label htmlFor='message-input'>Message:</label>

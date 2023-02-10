@@ -26,13 +26,13 @@ const BlogDetails = (props) => {
     <main className={styles.container}>
       <article>
         <header>
-          <img src="https://i.imgur.com/k4iOvKo.png" alt="" />
+          <img src='https://i.imgur.com/k4iOvKo.png' alt='' />
           <h1>Author: {blog.author?.name}</h1>
           <h1>Blog: {blog.content}</h1>
           <span>
             <AuthorInfo content={blog} />
             {blog.author?._id === props.user.profile &&
-              <div className="blogs">
+              <div className='blogs'>
                 <Link to={`/blogs/${id}/edit`} state={blog}>
                   <button>EDIT</button></Link>
                 <button onClick={() => props.handleDeleteBlog(id)}>DELETE</button>

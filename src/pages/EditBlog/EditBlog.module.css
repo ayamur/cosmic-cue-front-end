@@ -10,7 +10,10 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.container input, textarea, select, button { 
+.container input,
+textarea,
+select,
+button {
   width: 100%;
   padding: 14px;
   font-size: 14px;
@@ -36,7 +39,8 @@
   color: rgb(200, 200, 200);
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
   border: 1px solid var(--primary);
 }

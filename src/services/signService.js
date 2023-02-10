@@ -4,7 +4,7 @@ const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/signs`
 
 const create = async (signData) => {
   try {
-    const res =await fetch(BASE_URL, {
+    const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
@@ -21,7 +21,7 @@ const create = async (signData) => {
 const index = async () => {
   try {
     const res = await fetch(BASE_URL, {
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
   } catch (error) {

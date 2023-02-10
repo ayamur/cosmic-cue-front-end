@@ -7,11 +7,11 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <ul>
           Welcome, {user.name}
-          <ul className="userLinks">
-          <><Link to='/profiles'>Profiles</Link></>
-          <><Link to='/fortunes'>Fortunes</Link></>
-          <><Link to='/signs'>Signs</Link></>
-          <><Link to='/blogs'>Blogs</Link></>
+          <ul className='userLinks'>
+            <><Link to='/profiles'>Profiles</Link></>
+            <><Link to='/fortunes'>Fortunes</Link></>
+            <><Link to='/signs'>Signs</Link></>
+            <><Link to='/blogs'>Blogs</Link></>
           </ul>
           <><Link to='' onClick={handleLogout}>LOG OUT</Link></>
         </ul>

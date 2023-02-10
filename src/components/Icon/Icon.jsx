@@ -9,7 +9,7 @@ const Icon = ({ category }) => {
     Travel: Travel,
   }
 
-  return <img className="icon" src={icons[category]} alt={`A ${category} icon.`} />
+  return <img className='icon' src={icons[category]} alt={`A ${category} icon.`} />
 }
 
 export default Icon

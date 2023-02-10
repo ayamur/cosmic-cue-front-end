@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useParams, Link } from 'react-router-dom'
 
 import * as fortuneService from '../../services/fortuneService'
 
@@ -10,7 +10,6 @@ const FortuneDetails = (props) => {
   useEffect(() => {
     const fetchFortune = async () => {
       const data = await fortuneService.show(id)
-      console.log('data:', data)
       setFortune(data)
     }
     fetchFortune()
@@ -19,8 +18,8 @@ const FortuneDetails = (props) => {
   return (
     <>
       <main>
-        <div className="fortuneDetails">
-          <img src="/icons/Food.png" alt="" />
+        <div className='fortuneDetails'>
+          <img src='/icons/Food.png' alt='' />
           <h4>Fortune Details:</h4>
           <h4>{fortune?.message?.toUpperCase()}</h4>
           <>

@@ -1,9 +1,6 @@
 .container {
-  /* height: 75%;
-  width: 75%; */
-  overflow: scroll;
   align-items: center;
-  background-color:antiquewhite;
+  background-color: antiquewhite;
   opacity: 70%;
   display: flex;
   justify-content: center;
@@ -39,25 +36,26 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-	margin-top: 10px;
+  margin-top: 10px;
   align-items: center;
 }
 
 .container div {
-width: 100%;
+  width: 100%;
 }
 
-.container span button, .container span a {
+.container span button,
+.container span a {
   margin: 0;
-  /* margin: 50px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 10px;
-} 
+}
 
-.container span button, .container span a  {
+.container span button,
+.container span a {
   cursor: pointer;
   color: white;
   display: flex;
@@ -65,9 +63,9 @@ width: 100%;
   justify-content: center;
   align-items: center;
   margin: 10px;
-} 
+}
 
-.container > section article {
+.container>section article {
   padding: 0;
   width: 100%;
   min-height: 140px;
@@ -75,14 +73,10 @@ width: 100%;
   margin: 4px 0px 14px;
 }
 
-.container > section h1 {
+.container>section h1 {
   font-size: 21px;
 }
 
-.container > section article p {
+.container>section article p {
   text-indent: 0px;
 }
-/* .blogs {
-  background-color: red;
-
-} */

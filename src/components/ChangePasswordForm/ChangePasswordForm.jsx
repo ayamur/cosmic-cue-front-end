@@ -38,46 +38,46 @@ const ChangePasswordForm = props => {
 
   return (
     <form
-      autoComplete="off"
+      autoComplete='off'
       onSubmit={handleSubmit}
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>
+        <label htmlFor='password' className={styles.label}>
           Current Password
         </label>
         <input
-          type="password"
-          autoComplete="off"
-          id="password"
+          type='password'
+          autoComplete='off'
+          id='password'
           value={pw}
-          name="pw"
+          name='pw'
           onChange={handleChange}
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="newPassword" className={styles.label}>
+        <label htmlFor='newPassword' className={styles.label}>
           New Password
         </label>
         <input
-          type="password"
-          autoComplete="off"
-          id="newPassword"
+          type='password'
+          autoComplete='off'
+          id='newPassword'
           value={newPw}
-          name="newPw"
+          name='newPw'
           onChange={handleChange}
         />
       </div>
       <div className={styles.inputContainer}>
-        <label htmlFor="newPasswordConf" className={styles.label}>
+        <label htmlFor='newPasswordConf' className={styles.label}>
           Confirm New Password
         </label>
         <input
-          type="password"
-          autoComplete="off"
-          id="newPasswordConf"
+          type='password'
+          autoComplete='off'
+          id='newPasswordConf'
           value={newPwConf}
-          name="newPwConf"
+          name='newPwConf'
           onChange={handleChange}
         />
       </div>
@@ -85,7 +85,7 @@ const ChangePasswordForm = props => {
         <button disabled={isFormInvalid()} className={styles.button}>
           Change Password
         </button>
-        <Link to="/">
+        <Link to='/'>
           <button>Cancel</button>
         </Link>
       </div>

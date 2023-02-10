@@ -1,12 +1,12 @@
-import { useState } from "react"
-import { useLocation } from "react-router-dom"
+import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import styles from './EditBlog.module.css'
 
 const EditBlog = (props) => {
   const { state } = useLocation()
   const [form, setForm] = useState(state)
 
-  console.log(state)
+
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
   }
@@ -20,17 +20,17 @@ const EditBlog = (props) => {
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h1>Edit Manifestation</h1>
-        <label htmlFor="text-input">Update Manifestation Here:</label>
+        <label htmlFor='text-input'>Update Manifestation Here:</label>
         <textarea
           required
-          type="text"
-          name="content"
-          id="content-input"
+          type='text'
+          name='content'
+          id='content-input'
           value={form.text}
-          placeholder=""
+          placeholder=''
           onChange={handleChange}
         />
-        <button type="submit">SUBMIT</button>
+        <button type='submit'>SUBMIT</button>
       </form>
     </main>
   )

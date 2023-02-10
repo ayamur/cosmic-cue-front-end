@@ -21,7 +21,7 @@ const create = async (fortuneData) => {
 const index = async () => {
   try {
     const res = await fetch(BASE_URL, {
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
   } catch (error) {
@@ -32,7 +32,7 @@ const index = async () => {
 const show = async (id) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
-      headers: { 'Authorization': `Bearer ${tokenService.getToken()}`}
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
     })
     return res.json()
   } catch (error) {
@@ -42,7 +42,7 @@ const show = async (id) => {
 
 const update = async (fortuneData) => {
   try {
-    const res = await fetch (`${BASE_URL}/${fortuneData._id}`, {
+    const res = await fetch(`${BASE_URL}/${fortuneData._id}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,
@@ -59,7 +59,7 @@ const update = async (fortuneData) => {
 const deleteFortune = async (id) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
-      method: 'DELETE' ,
+      method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
@@ -70,4 +70,4 @@ const deleteFortune = async (id) => {
   }
 }
 
-export { create, index, show , update , deleteFortune , }
+export { create, index, show, update, deleteFortune, }

@@ -19,11 +19,11 @@ const Profiles = (user) => {
     <>
       <main >
         <div className='profileSectionOne'>
-          <div className="profiles">
-            <section className="profilesTwo">
-              <img src="https://i.imgur.com/oIKs9Wp.png" alt="" />
+          <div className='profiles'>
+            <section className='profilesTwo'>
+              <img src='https://i.imgur.com/oIKs9Wp.png' alt='' />
             </section>
-            <section className="profilesOne">
+            <section className='profilesOne'>
               <h1>Welcome to Cosmic Cue</h1>
               <h2>An app that helps you create good fortune 🌙 </h2>
               <h4> Visit your profile or explore the links above</h4>
@@ -31,7 +31,7 @@ const Profiles = (user) => {
               {profiles.length ?
                 <>
                   {profiles.map(profile =>
-                    <div key={profile._id} className="profileLinks">
+                    <div key={profile._id} className='profileLinks'>
                       <Link to={`/profiles/${profile._id}`} profile={profile} key={profile._id} user={user}>
                         {profile.name}</Link>
                     </div>

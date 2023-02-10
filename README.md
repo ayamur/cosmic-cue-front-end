@@ -2,15 +2,15 @@
 
 #  _Cosmic Cue_ - A Fortune Telling App
 
-Cosmic Cue is an app designed to bring positivity and inspiration into your life. With Cosmic Cue, you can receive daily fortunes and signs from the universe to help guide you on your path.
+Cosmic Cue is an app designed to bring positivity and inspiration into your life! With Cosmic Cue, you can receive daily fortunes and signs from the universe to help guide you on your path!
 
 ## Features
 
-- Daily fortunes to provide inspiration and guidance
-- Ability to create fortunes that others may receive
-- Daily signs to know what to look for
-- Ability to create a sign that others may receive
-- Positivity board to share your manifestations and goals with the Cosmic Cue community
+- Daily fortunes to provide inspiration and guidance!
+- Ability to create fortunes that others may receive!
+- Daily signs to know what to look for!
+- Ability to create a sign that others may receive!
+- Positivity board to share your manifestations and goals with the Cosmic Cue community!
 ---
 ## Getting Started 
  ## **[ Click here to use Cosmic Cue](https://main--cosmic-cue.netlify.app/)**<br>
@@ -18,7 +18,7 @@ Cosmic Cue is an app designed to bring positivity and inspiration into your life
 
 **[Click to view Planning Materials](https://trello.com/b/LMJeooEb/cosmic-cue-app)** 
 
- **[Back-End Repo](https://github.com/CCMatson/cosmic-cue-back-end)**
+ **[Back-End Repository](https://github.com/CCMatson/cosmic-cue-back-end)**
 
 # Technologies Used
 
@@ -55,7 +55,7 @@ Cosmic Cue is an app designed to bring positivity and inspiration into your life
 ### Credits/Attribution:
 ---
 <a href="https://www.flaticon.com/free-icons/love-and-romance" title="love and romance icons">Love and romance icons created by Ifanicon - Flaticon</a> </br>
-<a href="https://www.linkedin.com/in/ayalamuruch/" title="Celstial Icons">Celestial Icons and art by Aya! </a>
+<a href="https://www.linkedin.com/in/ayalamuruch/" title="Celestial Icons">Celestial Icons and art by Aya! </a>
 
 **[ Click here to use Cosmic Cue](https://main--cosmic-cue.netlify.app/)**
 ![](./public/Logo.png)
