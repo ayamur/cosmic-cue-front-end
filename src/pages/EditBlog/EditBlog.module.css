@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
 .container {
   height: 100%;
   display: flex;
@@ -5,6 +7,7 @@
   padding: 28px 21px;
   align-items: center;
   flex-direction: column;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .container input, textarea, select, button { 
@@ -21,13 +24,6 @@
 .container label {
   font-weight: 600;
   margin: 7px 0px 14px 0px;
-}
-
-.container button {
-  color: yellow;
-  font-weight: 600;
-  margin: 21px 0px 0px 0px;
-  background: green;
 }
 
 .container a {
