@@ -9,8 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Ubuntu', sans-serif;
   width: 100%;
+  height: 100vh;
   /* background: url('./assets/icons/CosmicCueBackground.png') */
   /* background: url('./assets/icons/GreenStars.jpg') */
+  overflow-y: scroll;
 }
 
 #root {
@@ -19,11 +21,11 @@ body {
 
 main {
   margin: 0;
-  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 
 code {
@@ -104,7 +106,6 @@ button:hover {
   align-items: center;
   justify-content: space-evenly;
   background-color:#FAF9F6;
-  border: green solid 2px;
   border-radius: 10px;
 }
 
@@ -136,7 +137,6 @@ button:hover {
 
 .profilesTwo {
   border-radius: 10px;
-  width: 45%;
   padding: 20px;
   display: flex;
   justify-content: center;
