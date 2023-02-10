@@ -91,9 +91,6 @@ button {
   /* font-family: 'sriracha'; */
 }
 
-/* link button{
-
-} */
 
 button:hover {
   background-color: #b4a0e5;
@@ -147,20 +144,15 @@ button:hover {
 }
 
 .myProfile {
-  padding: 20px;
   font-family: 'Ubuntu', sans-serif;
-  background-color: #eae6f3;
-  display: flex;
-}
-
-.profileImages {
-  background-color: #eae6f3;
+  background-color: #eae6f3; 
+  margin: 20px;
   padding: 20px;
-}
-
-.fortuneLinks {
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .fortuneLinks a {
@@ -178,20 +170,15 @@ button:hover {
   border: solid black .05px;
 }
 
-.fortuneList {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #eae6f3;
-}
-
 .fortuneListContainer {
   width: 100%;
   margin: 0;
   font-family: 'sriracha';
   background-color: #b4a0e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .fortuneListOne {
@@ -224,6 +211,7 @@ button:hover {
   border-radius: 10px;
   padding: 20px;
 }
+
 form {
   padding: 16px 32px;
   background-color: grey;
@@ -308,4 +296,17 @@ padding: 10px;
   background-color: #FAF9F6;
   border: black 2px solid;
   border-radius: 10px;
+}
+
+.logoDiv{
+  display: flex;
+  border: 2px black solid;
+  width: 100%;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.myProfileContainer{
+  background-color: yellow;
+  /* flex-direction: column; */
 }

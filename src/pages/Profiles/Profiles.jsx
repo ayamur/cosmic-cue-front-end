@@ -18,6 +18,7 @@ const Profiles = (user) => {
   return (
     <>
       <main >
+        <div className='profileSectionOne'>
         <div className="profiles">
           <section className="profilesTwo">
             <img src="https://i.imgur.com/k4iOvKo.png" alt="" />
@@ -43,6 +44,8 @@ const Profiles = (user) => {
             }
 
           </section>
+        </div>
+
         </div>
       </main>
     </>

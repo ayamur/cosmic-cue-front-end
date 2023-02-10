@@ -14,10 +14,10 @@ const FortuneList = ({ fortunes, user, profile }) => {
   return (
     <main className="fortuneList">
       <>
-        <h1>Thank you for creating these positive fortunes!</h1>
-        <h2>These fortunes are being sent to the random fortune generator. These messages will be delivered to the person who is meant to see them</h2>
-        <h4>Click on a fortune to edit or delete</h4>
         <div className="fortuneListContainer">
+        <h1>Thank you for creating these positive fortunes!</h1>
+        <h4> These fortunes are being sent to the random fortune generator. These messages will be delivered to the person who is meant to see them</h4>
+        <h2>Click on a fortune from the list below to edit or delete</h2>
           {myFortunes ?
             <>
               <>
