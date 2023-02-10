@@ -25,7 +25,7 @@ const MyProfile = (props) => {
         <>
         <div className="profileImages">
           <img src={Love} alt="" />
-          <h1>Welcome to your Cosmis Cue Profile, {myProfile.name}!</h1>
+          <h1>Welcome to your Cosmic Cue Profile, {myProfile.name}!</h1>
         </div>
         <div className="myProfile">
         <div className="profileLinks">
