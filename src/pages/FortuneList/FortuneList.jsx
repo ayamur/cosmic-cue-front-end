@@ -4,12 +4,12 @@ import Travel from '../../assets/icons/Travel.png'
 
 const FortuneList = ({ fortunes, user, profile }) => {
   const [myFortunes, setMyFortunes] = useState(null)
-  console.log(fortunes)
 
   useEffect(() => {
-    setMyFortunes(fortunes.filter(fortune => fortune.owner._id === user.profile))
+    setMyFortunes(fortunes.filter(fortune => fortune.owner?._id === user.profile))
 
   }, [fortunes])
+  if (!myFortunes) return "Loading"
 
   return (
     <main className="fortuneList">
