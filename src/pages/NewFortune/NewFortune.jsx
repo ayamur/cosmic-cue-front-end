@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import styles from './newFortune.module.css'
 
 const NewFortune = (props) => {
   const [form, setForm] = useState({
@@ -20,7 +19,15 @@ const NewFortune = (props) => {
 
   return (
     <main>
-      <div>
+      <div className="addFortune">
+        <div className="iconsList">
+        <img src="https://i.imgur.com/6E6zQUh.png" alt="" />
+        <img src="https://i.imgur.com/oIKs9Wp.png" alt="" />
+        <img src="https://i.imgur.com/ZYdyAnf.png" alt="" />
+        </div>
+        <h4>Enter a short message and a lucky number here. Your cosmic cue will be sent to another user who has requested a fortune from the universe!</h4>
+        <h1>Create a cosmic cue</h1>
+      </div>
       <form onSubmit={handleSubmit}>
         <label htmlFor='message-input'>Message:</label>
         <input required
@@ -30,6 +37,7 @@ const NewFortune = (props) => {
           value={form.message}
           placeholder='Message'
           onChange={handleChange}
+          autoComplete='off'
         />
         <label htmlFor='luckyNumber-input'>Lucky Number:</label>
         <input required
@@ -39,6 +47,7 @@ const NewFortune = (props) => {
           value={form.luckyNumber}
           placeholder='Lucky Number'
           onChange={handleChange}
+          autoComplete='off'
         />
         <label htmlFor='category-input'>Category:</label>
         <select
@@ -55,9 +64,6 @@ const NewFortune = (props) => {
         </select>
         <button type='submit'>SUBMIT</button>
       </form>
-
-
-      </div>
     </main>
   )
 }

@@ -20,7 +20,7 @@ const EditBlog = (props) => {
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h1>Edit Manifestation</h1>
-        <label htmlFor="text-input">Update Manifestation Below:</label>
+        <label htmlFor="text-input">Update Manifestation Here:</label>
         <textarea
           required
           type="text"

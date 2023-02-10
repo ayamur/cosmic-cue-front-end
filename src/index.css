@@ -10,8 +10,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   width: 100%;
   height: 100vh;
-  /* background: url('./assets/icons/CosmicCueBackground.png'); */
-  /* background: url('./assets/icons/GreenStars.jpg') */
+  background: url('./assets/icons/CosmicCueBackground.png');
   overflow-y: scroll;
 }
 
@@ -27,6 +26,7 @@ main {
   justify-content: center;
   align-items: center;
   overflow-y: scroll;
+  flex-direction: column;
 }
 
 code {
@@ -34,11 +34,11 @@ code {
     monospace;
 }
 
-.landing{
+.landing {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: black solid 2px;
-  width: 75%;
   background-color: #FAF9F6;
   border-radius: 15px;
   padding: 20px;
@@ -60,15 +60,21 @@ h4 {
 }
 
 a {
-  color: #1e1014;
-  font-weight: 300;
+  color: #69587d;
+  font-weight: 500;
   text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 10px;
+
 }
 
 a:hover {
-  color: #69587d;
   font-weight: 400;
   text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #b4a0e5;
+  color: #1E1014;
+  /* height: 24px; */
 }
 
 .randomFortune {
@@ -76,9 +82,9 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 0;
   background-color: #FAF9F6;
-  padding: 10%;
+  padding: 10px;
 }
 
 button {
@@ -86,13 +92,8 @@ button {
   color: #b4a0e5;
   font-size: 16px;
   font-weight: bold;
-  box-shadow:#282c34 10px 5px 5px;
-  /* font-family: 'sriracha'; */
+  box-shadow: #282c34 10px 5px 5px;
 }
-
-/* link button{
-
-} */
 
 button:hover {
   background-color: #b4a0e5;
@@ -106,8 +107,9 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color:#FAF9F6;
+  background-color: #FAF9F6;
   border-radius: 10px;
+  width: 50vw;
 }
 
 .profilesOne {
@@ -119,20 +121,20 @@ button:hover {
   border-radius: 10px;
 }
 
-.profileLinks{
+.profileLinks {
   display: flex;
   background-color: #FAF9F6;
 }
 
-.profilesOne a{
-  color:#1e1014;
-  margin:10px;
+.profilesOne a {
+  color: #1e1014;
+  margin: 10px;
 }
 
-.profilesOne a:hover{
+.profilesOne a:hover {
   background-color: #69587d;
-  color:#FAF9F6;
-  margin:10px;
+  color: #FAF9F6;
+  margin: 10px;
   border-radius: 2px;
 }
 
@@ -146,20 +148,21 @@ button:hover {
 }
 
 .myProfile {
-  padding: 20px;
   font-family: 'Ubuntu', sans-serif;
   background-color: #eae6f3;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profileImages {
-  background-color: #eae6f3;
-  padding: 20px;
-}
-
-.fortuneLinks {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .fortuneLinks a {
@@ -172,18 +175,9 @@ button:hover {
 }
 
 .fortuneLinks a:hover {
-  color: #1E1014; 
+  color: #1E1014;
   background-color: #FAF9F6;
   border: solid black .05px;
-}
-
-.fortuneList {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #eae6f3;
 }
 
 .fortuneListContainer {
@@ -191,23 +185,24 @@ button:hover {
   margin: 0;
   font-family: 'sriracha';
   background-color: #b4a0e5;
-}
-
-.fortuneListOne {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.fortuneListOne a{
-  color: #1E1014; ;
+.fortuneListOne {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.fortuneListOne a:hover{
-  color: #1E1014; 
+.fortuneListOne a {
+  color: #1E1014;
+}
+
+.fortuneListOne a:hover {
+  color: #1E1014;
   background-color: #FAF9F6;
-  padding: 0px 10px 0px 10px;
   border-radius: 10px;
 }
 
@@ -217,12 +212,16 @@ button:hover {
   padding: 20px;
 }
 
-.fortuneDetails{
+.fortuneDetails {
   background-color: #69587d;
-  color:#FAF9F6;
+  color: #FAF9F6;
   border-radius: 10px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 form {
   padding: 16px 32px;
   background-color: grey;
@@ -232,7 +231,7 @@ form {
   justify-content: space-around;
   align-items: center;
   width: 75%;
-  /* flex-direction: column; */
+  flex-direction: column;
   background-color: #eae6f3;
 }
 
@@ -249,9 +248,7 @@ form input {
 }
 
 form select {
-  background-color:#b4a0e5;
-  padding: 10px;
-  margin: 0px 100px 0px 0px;
+  background-color: #b4a0e5;
 }
 
 .randomSign {
@@ -260,11 +257,51 @@ form select {
   align-items: center;
   justify-content: center;
   margin: auto;
-  width: 75%;
   background-color: #FAF9F6;
+  border: black 2px solid;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.randomFortune{
+.addSign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #b4a0e5;
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.addSign img {
+  padding: 50px;
+}
+
+.addFortune {
+  background-color: #b4a0e5;
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconsList {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.randomFortune {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -274,4 +311,28 @@ form select {
   background-color: #FAF9F6;
   border: black 2px solid;
   border-radius: 10px;
+}
+
+.logoDiv {
+  display: flex;
+  border: 2px black solid;
+  width: 100%;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.myProfileContainer {
+  background-color: yellow;
+}
+
+.editFortune {
+  background-color: #b4a0e5;
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

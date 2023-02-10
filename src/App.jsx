@@ -125,15 +125,6 @@ const App = () => {
     fetchAllBlogs()
   }, [user])
 
-  // useEffect(() => {
-  //   const fetchAllSignsAndBlogs = async () => {
-  //     const signData = await signService.index()
-  //     const blogData = await blogService.index()
-  //     setSigns(signData)
-  //     setBlogs(blogData)
-  //   }
-  //   fetchAllSignsAndBlogs()
-  // }, [user])
 
   return (
     <>

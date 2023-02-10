@@ -1,4 +1,4 @@
-![](./public/Logo.png)
+![](./public/Landingpage.png)
 
 #  _Cosmic Cue_ - A Fortune Telling App
 
@@ -22,30 +22,9 @@ Cosmic Cue is an app designed to bring positivity and inspiration into your life
 
 # Technologies Used
 
-<table>
-    <tbody>
-        <tr>
-            <td>
-            <img height="40" src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" />
-            </a></td>
-            <td>
-            <img height="40" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" />
-            </a></td>
-            <td>
-            <img height="40" src="https://www.vectorlogo.zone/logos/w3_css/w3_css-ar21.svg"/>
-            </a></td>
-              <td>
-            <img height="40" src="https://www.vectorlogo.zone/logos/javascript/javascript-vertical.svg" />
-            </a></td>
-              <td>
-            <img height="40" src="https://www.vectorlogo.zone/logos/mongodb/mongodb-ar21.svg" />
-            </a></td>
-             <td>
-            <img height="40" src="https://www.vectorlogo.zone/logos/nodejs/nodejs-horizontal.svg"/>
-            </a></td>
-        </tr>
-    </tbody>
-</table>
+
+
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,mongo,nodejs,react,postman)](https://skillicons.dev)
 
 ## Next Steps 🧊 
 
@@ -79,3 +58,4 @@ Cosmic Cue is an app designed to bring positivity and inspiration into your life
 <a href="https://www.linkedin.com/in/ayalamuruch/" title="Celstial Icons">Celestial Icons and art by Aya! </a>
 
 **[ Click here to use Cosmic Cue](https://main--cosmic-cue.netlify.app/)**
+![](./public/Logo.png)
