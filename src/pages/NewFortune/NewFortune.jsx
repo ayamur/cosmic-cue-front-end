@@ -20,6 +20,7 @@ const NewFortune = (props) => {
 
   return (
     <main>
+      <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor='message-input'>Message:</label>
         <input required
@@ -54,6 +55,9 @@ const NewFortune = (props) => {
         </select>
         <button type='submit'>SUBMIT</button>
       </form>
+
+
+      </div>
     </main>
   )
 }
