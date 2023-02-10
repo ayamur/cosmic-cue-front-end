@@ -18,7 +18,6 @@ const FortuneDetails = (props) => {
 
   return (
     <>
-      <h1>You have the power to edit or delete this fortune:</h1>
       <main>
         <div className="fortuneDetails">
           <img src="/icons/Food.png" alt="" />
