@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { useLocation } from 'react-router-dom'
-// import styles from './EditFortune.module.css'
 
 const EditFortune = (props) => {
   const { state } = useLocation()
   const [form, setForm] = useState(state)
-
-  console.log('state:', state)
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })

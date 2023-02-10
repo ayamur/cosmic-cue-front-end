@@ -18,7 +18,7 @@ const NewBlog = (props) => {
   return (
     <main className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="content-input">Enter a Manifestation in the Box Below:</label>
+        <label htmlFor="content-input">Enter Your Manifestation in the Box:</label>
         <textarea
           required
           type="text"
