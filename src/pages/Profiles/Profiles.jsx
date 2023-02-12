@@ -18,7 +18,7 @@ const Profiles = (user) => {
   return (
     <>
       <main >
-        <div className='profileSectionOne'>
+        {/* <div className='profileSectionOne'> */}
           <div className="profiles">
             <section className="profilesTwo">
               <img src="https://i.imgur.com/oIKs9Wp.png" alt="" />
@@ -44,7 +44,7 @@ const Profiles = (user) => {
               }
             </section>
           </div>
-        </div>
+        {/* </div> */}
       </main>
     </>
   )

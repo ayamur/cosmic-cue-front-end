@@ -60,14 +60,25 @@ const App = () => {
     navigate(`/profiles`)
   }
 
-  useEffect(() => {
-    const fetchAllFortunes = async () => {
-      const data = await fortuneService.index()
-      setFortunes(data)
+  const fetchAllFortunes = async () => {
+    const data = await fortuneService.index()
+    setFortunes(data)
+  }
+  const fetchAllSigns = async () => {
+    const data = await signService.index()
+    setSigns(data)
+  }
+  const fetchAllBlogs = async () => {
+    const data = await blogService.index()
+    setBlogs(data)
+  }
 
-    }
+  useEffect(() => {
     fetchAllFortunes()
-  }, [])
+    fetchAllSigns()
+    fetchAllBlogs()
+  }, [user])
+
 
   const handleUpdateFortune = async (fortuneData) => {
     const updateFortune = await fortuneService.update(fortuneData)
@@ -89,14 +100,6 @@ const App = () => {
     setSigns([newSign, ...signs])
     navigate('/signs')
   }
-  useEffect(() => {
-    const fetchAllSigns = async () => {
-      const data = await signService.index()
-      setSigns(data)
-
-    }
-    fetchAllSigns()
-  }, [user])
 
   const handleAddBlog = async (blogData) => {
     const newBlog = await blogService.create(blogData)
@@ -115,16 +118,6 @@ const App = () => {
     setBlogs(blogs.map((b) => blogData._id === b._id ? updatedBlog : b))
     navigate('/blogs')
   }
-
-  useEffect(() => {
-    const fetchAllBlogs = async () => {
-      const data = await blogService.index()
-      setBlogs(data)
-
-    }
-    fetchAllBlogs()
-  }, [user])
-
 
   return (
     <>
