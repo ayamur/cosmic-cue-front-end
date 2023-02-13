@@ -18,10 +18,10 @@ const Profiles = (user) => {
   return (
     <>
       <main >
-        <div className='profileSectionOne'>
-          <div className='profiles'>
-            <section className='profilesTwo'>
-              <img src='https://i.imgur.com/oIKs9Wp.png' alt='' />
+        {/* <div className='profileSectionOne'> */}
+          <div className="profiles">
+            <section className="profilesTwo">
+              <img src="https://i.imgur.com/oIKs9Wp.png" alt="" />
             </section>
             <section className='profilesOne'>
               <h1>Welcome to Cosmic Cue</h1>
@@ -44,7 +44,7 @@ const Profiles = (user) => {
               }
             </section>
           </div>
-        </div>
+        {/* </div> */}
       </main>
     </>
   )
